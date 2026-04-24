@@ -1,105 +1,42 @@
 class ParkGenerator {
     constructor() {
         this.usParks = [
-            { name: "Acadia", state: "ME", year: "1919" },
-            { name: "Arches", state: "UT", year: "1971" },
-            { name: "Badlands", state: "SD", year: "1978" },
-            { name: "Big Bend", state: "TX", year: "1944" },
-            { name: "Biscayne", state: "FL", year: "1980" },
-            { name: "Black Canyon of the Gunnison", state: "CO", year: "1999" },
-            { name: "Bryce Canyon", state: "UT", year: "1928" },
-            { name: "Canyonlands", state: "UT", year: "1964" },
-            { name: "Capitol Reef", state: "UT", year: "1971" },
-            { name: "Carlsbad Caverns", state: "NM", year: "1930" },
-            { name: "Channel Islands", state: "CA", year: "1980" },
-            { name: "Congaree", state: "SC", year: "2003" },
-            { name: "Crater Lake", state: "OR", year: "1902" },
-            { name: "Cuyahoga Valley", state: "OH", year: "2000" },
-            { name: "Death Valley", state: "CA/NV", year: "1994" },
-            { name: "Denali", state: "AK", year: "1917" },
-            { name: "Dry Tortugas", state: "FL", year: "1992" },
-            { name: "Everglades", state: "FL", year: "1947" },
-            { name: "Gates of the Arctic", state: "AK", year: "1980" },
-            { name: "Gateway Arch", state: "MO", year: "2018" },
-            { name: "Glacier", state: "MT", year: "1910" },
-            { name: "Glacier Bay", state: "AK", year: "1980" },
-            { name: "Grand Canyon", state: "AZ", year: "1919" },
-            { name: "Grand Teton", state: "WY", year: "1929" },
-            { name: "Great Basin", state: "NV", year: "1986" },
-            { name: "Great Sand Dunes", state: "CO", year: "2004" },
-            { name: "Great Smoky Mountains", state: "TN/NC", year: "1934" },
-            { name: "Guadalupe Mountains", state: "TX", year: "1966" },
-            { name: "Haleakalā", state: "HI", year: "1916" },
-            { name: "Hawaiʻi Volcanoes", state: "HI", year: "1916" },
-            { name: "Hot Springs", state: "AR", year: "1921" },
-            { name: "Indiana Dunes", state: "IN", year: "2019" },
-            { name: "Isle Royale", state: "MI", year: "1940" },
-            { name: "Joshua Tree", state: "CA", year: "1994" },
-            { name: "Katmai", state: "AK", year: "1980" },
-            { name: "Kenai Fjords", state: "AK", year: "1980" },
-            { name: "Kings Canyon", state: "CA", year: "1940" },
-            { name: "Kobuk Valley", state: "AK", year: "1980" },
-            { name: "Lake Clark", state: "AK", year: "1980" },
-            { name: "Lassen Volcanic", state: "CA", year: "1916" },
-            { name: "Mammoth Cave", state: "KY", year: "1941" },
-            { name: "Mesa Verde", state: "CO", year: "1906" },
-            { name: "Mount Rainier", state: "WA", year: "1899" },
-            { name: "New River Gorge", state: "WV", year: "2020" },
-            { name: "North Cascades", state: "WA", year: "1968" },
-            { name: "Olympic", state: "WA", year: "1938" },
-            { name: "Petrified Forest", state: "AZ", year: "1962" },
-            { name: "Pinnacles", state: "CA", year: "2013" },
-            { name: "Redwood", state: "CA", year: "1968" },
-            { name: "Rocky Mountain", state: "CO", year: "1915" },
-            { name: "Saguaro", state: "AZ", year: "1994" },
-            { name: "Sequoia", state: "CA", year: "1890" },
-            { name: "Shenandoah", state: "VA", year: "1935" },
-            { name: "Theodore Roosevelt", state: "ND", year: "1978" },
-            { name: "Virgin Islands", state: "VI", year: "1956" },
-            { name: "Voyageurs", state: "MN", year: "1975" },
-            { name: "White Sands", state: "NM", year: "2019" },
-            { name: "Wind Cave", state: "SD", year: "1903" },
-            { name: "Wrangell–St. Elias", state: "AK", year: "1980" },
             { name: "Yellowstone", state: "WY/MT/ID", year: "1872" },
             { name: "Yosemite", state: "CA", year: "1890" },
-            { name: "Zion", state: "UT", year: "1919" }
+            { name: "Zion", state: "UT", year: "1919" },
+            // ... (keep all 63 parks here)
         ];
     }
 
     pickRandom() {
-        console.log("Button Clicked!"); // For troubleshooting
         const park = this.usParks[Math.floor(Math.random() * this.usParks.length)];
         const display = document.getElementById('result-display');
         
-        // Reset the display immediately
-        display.innerHTML = "";
+        // 1. Darken the reveal area for the "Video"
+        display.innerHTML = `<div id="video-stage" style="background:#111; padding:100px 20px; border-radius:10px; box-shadow: inset 0 0 50px #000;"></div>`;
+        const stage = document.getElementById('video-stage');
 
-        // First piece of text
+        // 2. Start the suspense sequence
         setTimeout(() => {
-            let p1 = document.createElement('p');
-            p1.className = "suspense-text";
-            p1.innerHTML = `ESTABLISHED: ${park.year}`;
-            display.appendChild(p1);
-        }, 500);
+            stage.innerHTML = `<p class="suspense-text">INITIALIZING DATA...</p>`;
+        }, 300);
 
-        // Second piece of text
         setTimeout(() => {
-            let p2 = document.createElement('p');
-            p2.className = "suspense-text";
-            p2.style.color = "#A86B4C";
-            p2.innerHTML = `LOCATION: ${park.state}`;
-            display.appendChild(p2);
+            stage.innerHTML += `<br><p class="suspense-text">FOUNDED: ${park.year}</p>`;
         }, 1500);
 
-        // The Grand Reveal
         setTimeout(() => {
-            let h2 = document.createElement('h2');
-            h2.className = "reveal-title";
-            h2.innerHTML = park.name.toUpperCase();
-            display.appendChild(h2);
-        }, 2500);
+            stage.innerHTML += `<br><p class="suspense-text">REGION: ${park.state}</p>`;
+        }, 2700);
+
+        // 3. THE BIG SLAM REVEAL
+        setTimeout(() => {
+            stage.innerHTML = `<h2 class="reveal-title">${park.name.toUpperCase()}</h2>`;
+            // Add a little screen shake effect to the container
+            display.style.animation = "shake 0.4s";
+            setTimeout(() => display.style.animation = "", 400);
+        }, 4000);
     }
 }
 
-// Make the generator available globally
 window.MyParkRanger = new ParkGenerator();
