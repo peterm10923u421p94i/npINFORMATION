@@ -1,8 +1,29 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National Park Explorer</title>
+    <link rel="stylesheet" href="park.css">
+</head>
+<body>
 
-<div class="rustic-card">
-    <div id="park-display">Where to next?</div>
-    <button class="btn-adventure" onclick="myRanger.announceAdventure()">Find My Park</button>
-</div>
+    <nav class="nav-bar">
+        <a href="#home">Home</a>
+        <a href="#info">Info</a>
+        <a href="#generator">Generator</a>
+    </nav>
 
-<script src="script.js"></script>
+    <div id="generator" class="adventure-container">
+        <h1>Find Your Next Adventure</h1>
+        <p>Unsure where the trail leads? Click below to discover a US National Park.</p>
+        
+        <button class="park-button" onclick="MyParkRanger.pickRandom()">
+            Spin the Compass
+        </button>
+
+        <div id="result-display">Your journey begins here...</div>
+    </div>
+
+    <script src="park.js"></script>
+</body>
+</html>
