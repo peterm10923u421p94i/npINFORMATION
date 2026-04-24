@@ -1,77 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NP Explorer | The Archive</title>
-    <link rel="stylesheet" href="park.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <div id="intro-overlay">
-        <div class="intro-content">
-            <p style="color: #A86B4C; letter-spacing: 5px; margin-bottom: 0;">PROJECT 2026</p>
-            <h1>THE COMPASS</h1>
-            <button class="ready-btn" onclick="enterSite()">ENTER WILDERNESS</button>
-        </div>
+<div id="intro-overlay" class="overlay">
+    <div class="permit-box">
+        <h2>Welcome to the National Park Compass</h2>
+        <p>Your entry permit is authorized.</p>
+        <button class="action-btn" onclick="enterSite()">Ready to Get Going</button>
     </div>
+</div>
 
-    <nav class="nav-bar">
-        <a href="index.html">History</a>
-        <a href="stats.html">Records</a>
-        <a href="generator.html">Discovery</a>
-    </nav>
+<nav class="nav-bar">
+    <a href="index.html">History</a>
+    <a href="stats.html">Records</a>
+    <a href="generator.html">Discovery</a>
+</nav>
 
-    <div class="container">
-        <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img tilt-right">
+<div class="container">
+    <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img tilt-right">
+    <h1>Historical Foundation</h1>
+    <p>The American National Park system began as a revolutionary experiment...</p>
+    <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img tilt-left">
+</div>
 
-        <h1>The Historical Foundation</h1>
-        
-        <p>
-            The American National Park system, often hailed as "America's Best Idea," began as a revolutionary 
-            democratic experiment to ensure that the nation's most sublime landscapes remained public property 
-            rather than private estates. This vision was formalized in 1872 when President Ulysses S. Grant 
-            signed the Yellowstone National Park Protection Act into law, creating the world's first national park.
-        </p>
-        
-        <p>
-            The movement gained its soul through the evocative writings of John Muir, who championed the spiritual 
-            and physical necessity of wild places, and its political momentum through Theodore Roosevelt, whose 
-            conservationist presidency protected over 230 million acres of public land.
-        </p>
-
-        <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img tilt-left" style="width: 75%;">
-    </div>
-
-    <script>
-        const overlay = document.getElementById('intro-overlay');
-
-        // Check if the user already clicked "Enter" during this session
-        if (sessionStorage.getItem('hasEntered')) {
-            overlay.style.display = 'none'; // Skip the intro
-            document.body.style.overflow = 'auto';
-        } else {
-            document.body.style.overflow = 'hidden'; // Lock scrolling during intro
-        }
-
-        function enterSite() {
-            // Save state so intro doesn't repeat on refresh
-            sessionStorage.setItem('hasEntered', 'true');
-            
-            // Trigger the cinematic slide-up
-            overlay.style.transform = "translateY(-100%)"; 
-            overlay.style.opacity = "0";
-            
-            // Re-enable scrolling
-            document.body.style.overflow = 'auto';
-            
-            // Completely remove overlay after animation finishes
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 1500);
-        }
-    </script>
-
-</body>
-</html>
+<script>
+    if(sessionStorage.getItem('entered')) { document.getElementById('intro-overlay').style.display='none'; }
+    function enterSite() {
+        sessionStorage.setItem('entered', 'true');
+        document.getElementById('intro-overlay').style.display='none';
+    }
+</script>
