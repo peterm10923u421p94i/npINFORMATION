@@ -1,56 +1,67 @@
-:root {
-    --forest: #2D4033;
-    --wood: #5C3A2E;
-    --cream: #F4EFE6;
-    --paper: #FAF9F6;
-    --ink: #332F2C;
-    --accent: #A86B4C;
-}
-
-body {
-    background-color: var(--cream);
-    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
-    color: var(--ink);
-    font-family: 'Lora', serif;
-    margin: 0;
-    line-height: 1.9;
-}
-
-/* CINEMATIC INTRO */
+/* CINEMATIC OVERLAY (The First Intro) */
 #intro-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #000;
+    background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    opacity: 1;
-    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
 }
 
-.intro-content { text-align: center; color: white; }
-.intro-content h1 { font-family: 'Arvo'; font-size: 3.5rem; letter-spacing: 8px; margin-bottom: 10px; }
+/* Intro Text "Video" Effect */
+.intro-content h1 {
+    font-family: 'Arvo', serif;
+    font-size: 5rem;
+    color: white;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    animation: cinematicZoom 5s infinite alternate;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
 
-/* SCRAPBOOK UI */
-.nav-bar { background-color: var(--wood); display: flex; justify-content: center; padding: 1.5rem; border-bottom: 4px solid var(--forest); }
-.nav-bar a { color: var(--paper); text-decoration: none; margin: 0 25px; font-family: 'Arvo'; font-weight: bold; text-transform: uppercase; }
+@keyframes cinematicZoom {
+    from { transform: scale(1); filter: blur(2px); opacity: 0.8; }
+    to { transform: scale(1.1); filter: blur(0px); opacity: 1; }
+}
 
-.container { max-width: 900px; margin: 50px auto; padding: 60px; background: var(--paper); box-shadow: 2px 2px 20px rgba(0,0,0,0.05); position: relative; }
+/* THE GENERATOR "VIDEO" REVEAL */
+.suspense-text {
+    font-family: 'Arvo';
+    font-size: 1.5rem;
+    letter-spacing: 8px;
+    margin: 20px 0;
+    color: #fff;
+    background: rgba(0,0,0,0.8); /* Dark backing like subtitles */
+    display: inline-block;
+    padding: 5px 20px;
+    opacity: 0;
+    animation: flashIn 0.5s ease-out forwards;
+}
 
-.scrapbook-img { background: white; padding: 12px 12px 30px 12px; box-shadow: 5px 10px 25px rgba(0,0,0,0.15); border: 1px solid #ddd; max-width: 100%; margin: 30px auto; display: block; }
-.tilt-right { transform: rotate(2deg); }
-.tilt-left { transform: rotate(-2deg); }
+.reveal-title {
+    font-family: 'Arvo';
+    font-size: 4.5rem; 
+    color: #A86B4C;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    opacity: 0;
+    /* This makes the name slam onto the screen */
+    animation: slamZoom 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+    text-shadow: 0 0 30px rgba(168, 107, 76, 0.8);
+}
 
-/* SUSPENSE REVEAL ANIMATIONS */
-.suspense-text { font-family: 'Arvo'; font-size: 1.1rem; letter-spacing: 4px; margin: 15px 0; opacity: 0; animation: fadeInSlide 0.8s forwards; }
-.reveal-title { font-family: 'Arvo'; font-size: 3.5rem; color: var(--forest); letter-spacing: 8px; margin-top: 30px; opacity: 0; animation: bigReveal 1s forwards; }
+@keyframes flashIn {
+    0% { opacity: 0; filter: brightness(5); transform: scale(1.2); }
+    100% { opacity: 1; filter: brightness(1); transform: scale(1); }
+}
 
-@keyframes fadeInSlide { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes bigReveal { 0% { opacity: 0; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1); } }
-
-.ready-btn { background: transparent; color: white; border: 1px solid white; padding: 15px 40px; font-family: 'Arvo'; cursor: pointer; letter-spacing: 2px; }
-.ready-btn:hover { background: white; color: black; }
+@keyframes slamZoom {
+    0% { opacity: 0; transform: scale(3); filter: blur(20px); }
+    80% { transform: scale(0.9); filter: blur(0); }
+    100% { opacity: 1; transform: scale(1); }
+}
