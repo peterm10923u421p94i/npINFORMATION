@@ -3,97 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Park Explorer | History & Adventure</title>
-    <link rel="stylesheet" href="park.css">
+    <title>National Park Explorer</title>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
+    
+    <style>
+        /* --- RUSTIC CSS (park.css) --- */
+        :root {
+            --forest: #2D4033;
+            --wood: #5C3A2E;
+            --parchment: #F4EFE6;
+            --dirt: #8B5E3C;
+            --trail-sign: #E9D758;
+        }
 
-    <nav class="nav-bar">
-        <a href="#home">Home</a>
-        <a href="#history">History</a>
-        <a href="#stats">Park Stats</a>
-        <a href="#generator">Generator</a>
-    </nav>
+        body {
+            background-color: var(--parchment);
+            color: var(--wood);
+            font-family: 'Lora', serif;
+            margin: 0;
+            line-height: 1.8;
+        }
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>America's Best Idea</h1>
-            <p>Exploring the history and majesty of the US National Parks.</p>
-        </div>
-    </header>
+        /* NAVIGATION */
+        .nav-bar {
+            background-color: var(--forest);
+            display: flex;
+            justify-content: center;
+            padding: 1.2rem;
+            border-bottom: 6px solid var(--wood);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    <section id="history" class="content-section">
-        <div class="container">
-            <h2>The Roots of Conservation</h2>
-            <div class="info-grid">
-                <div class="text-block">
-                    <p>The concept of a "National Park" was a revolutionary idea. In the mid-19th century, as the American West was being explored, visionaries realized that unique natural wonders needed protection from commercialism.</p>
-                    <h3>Who Founded the Idea?</h3>
-                    <p>While many contributed, two names stand tallest:</p>
-                    <ul>
-                        <li><strong>John Muir:</strong> Known as the "Father of the National Parks," his writings and activism were instrumental in the creation of Yosemite.</li>
-                        <li><strong>Theodore Roosevelt:</strong> The "Conservationist President" who signed the Antiquities Act and established 150 national forests and 5 national parks.</li>
-                    </ul>
-                    <p>In 1872, <strong>Yellowstone</strong> became the world’s first National Park, and in 1916, President Woodrow Wilson signed the Organic Act, creating the National Park Service (NPS).</p>
-                </div>
-                <div class="image-block">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600" alt="Yellowstone Geyser">
-                    <p class="caption">Old Faithful, Yellowstone National Park</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        .nav-bar button {
+            background: none;
+            border: none;
+            color: white;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Arvo', serif;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
 
-    <section id="stats" class="stats-section">
-        <div class="container">
-            <h2>By The Numbers</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>Most Visited</h3>
-                    <ol>
-                        <li>Great Smoky Mountains</li>
-                        <li>Grand Canyon</li>
-                        <li>Zion</li>
-                        <li>Yellowstone</li>
-                        <li>Rocky Mountain</li>
-                    </ol>
-                </div>
-                <div class="stat-card">
-                    <h3>Largest (Acres)</h3>
-                    <ul>
-                        <li>Wrangell-St. Elias (13.2M)</li>
-                        <li>Gates of the Arctic (8.4M)</li>
-                        <li>Denali (6.1M)</li>
-                        <li>Katmai (4.1M)</li>
-                        <li>Death Valley (3.4M)</li>
-                    </ul>
-                </div>
-                <div class="stat-card">
-                    <h3>Least Visited</h3>
-                    <ul>
-                        <li>National Park of American Samoa</li>
-                        <li>Gates of the Arctic</li>
-                        <li>Kobuk Valley</li>
-                        <li>Isle Royale</li>
-                        <li>North Cascades</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        .nav-bar button:hover { color: var(--trail-sign); }
 
-    <section id="generator" class="adventure-container">
-        <h2>Start Your Own History</h2>
-        <p>Every park has a story. Let the compass decide which one you'll visit next.</p>
-        <button class="park-button" onclick="MyParkRanger.pickRandom()">Spin the Compass</button>
-        <div id="result-display">Ready for departure...</div>
-    </section>
+        /* CONTENT VISIBILITY LOGIC */
+        .page-section { display: none; } /* Hidden by default */
+        .active { display: block; }      /* Shown when active */
 
-    <footer>
-        <p>&copy; 2026 National Park Explorer. "Leave only footprints, take only pictures."</p>
-    </footer>
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
 
-    <script src="park.js"></script>
-</body>
-</html>
+        h1, h2 { font-family: 'Arvo', serif; text-transform: uppercase; color: var(--forest); }
+
+        .park-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border: 12px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+
+        .stats-card {
+            background: white;
+            border: 2px solid var(--wood);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .official-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--dirt);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* GENERATOR STYLES */
+        .gen-container {
+            text-align: center;
+            padding: 50px;
+            background: white;
+            border: 3px dashed var(--wood
