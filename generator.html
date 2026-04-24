@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>National Parks | Generator</title>
+    <title>NP Explorer | Discovery</title>
     <link rel="stylesheet" href="park.css">
 </head>
 <body>
     <nav class="nav-bar">
         <a href="index.html">History</a>
-        <a href="stats.html">Park Stats</a>
-        <a href="generator.html" class="active-link">Generator</a>
+        <a href="stats.html">Stats</a>
+        <a href="generator.html">Generator</a>
     </nav>
 
     <div class="container" style="text-align: center;">
-        <h1>Adventure Generator</h1>
-        <div class="gen-box">
-            <p>Let the rustic compass guide you to a US National Park.</p>
-            <button class="park-button" onclick="MyParkRanger.pickRandom()">SPIN THE COMPASS</button>
-            <div id="result-display">Ready for departure...</div>
+        <h1>Discovery Compass</h1>
+        <p class="handwritten">Close your eyes and spin the dial...</p>
+        
+        <button class="park-button" onclick="MyParkRanger.pickRandom()" style="padding: 20px 40px; background: var(--forest); color: white; border: none; font-family: 'Arvo'; cursor: pointer; border-radius: 50px;">
+            CONSULT THE WILD
+        </button>
+
+        <div id="result-display" style="margin-top: 50px;">
+            </div>
+        
+        <div class="gallery-grid" style="margin-top: 50px; opacity: 0.5;">
+            <div class="photo-frame" style="transform: rotate(2deg);"><img src="https://images.unsplash.com/photo-1533630733575-b90306346761?w=300" alt="Compass"></div>
+            <div class="photo-frame" style="transform: rotate(-2deg);"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=300" alt="Map"></div>
         </div>
     </div>
 
