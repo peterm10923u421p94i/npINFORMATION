@@ -9,11 +9,11 @@
 
 body {
     background-color: var(--cream);
-    background-image: url("https://www.transparenttextures.com/patterns/p6.png"); /* Paper texture */
+    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
     color: var(--ink);
     font-family: 'Lora', serif;
     margin: 0;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 /* NAVIGATION */
@@ -21,62 +21,59 @@ body {
     background-color: var(--wood);
     display: flex;
     justify-content: center;
-    padding: 1.2rem;
+    padding: 1.5rem;
     border-bottom: 4px solid var(--forest);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .nav-bar a {
     color: var(--paper);
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 25px;
     font-family: 'Arvo', serif;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
-.nav-bar a:hover { color: var(--accent); }
-
-/* SCRAPBOOK CONTAINER */
+/* ARTISTIC CONTAINER */
 .container { 
     max-width: 900px; 
-    margin: 40px auto; 
-    padding: 50px;
+    margin: 50px auto; 
+    padding: 60px;
     background: var(--paper);
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.05);
-    border: 1px solid #e0ddd5;
-}
-
-h1, h2, h3 { font-family: 'Arvo', serif; color: var(--forest); text-transform: uppercase; }
-
-/* THE "PHOTO SPOT" (Empty Polaroid) */
-.photo-spot {
-    background: #eee;
-    border: 1px solid #ccc;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.05);
     position: relative;
-    margin: 20px 0;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-    background-image: repeating-linear-gradient(45deg, #fdfdfd, #fdfdfd 10px, #f9f9f9 10px, #f9f9f9 20px);
 }
 
-.photo-spot::after {
-    content: "FIELD SKETCH / PHOTO AREA";
-    font-family: 'Arvo', serif;
-    color: #bbb;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+h1, h2, h3 { font-family: 'Arvo', serif; color: var(--forest); }
+
+/* SCRAPBOOK IMAGES */
+.scrapbook-img {
+    background: white;
+    padding: 12px 12px 30px 12px;
+    box-shadow: 5px 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
 }
 
-/* LIST CARDS */
-.record-block {
-    margin-bottom: 40px;
-    border-left: 3px solid var(--accent);
-    padding-left: 20px;
+.tilt-left { transform: rotate(-2deg); }
+.tilt-right { transform: rotate(2deg); }
+
+/* LISTS */
+.record-section { margin: 40px 0; border-top: 1px dashed var(--accent); padding-top: 20px; }
+
+.park-button {
+    background: var(--forest);
+    color: white;
+    padding: 18px 35px;
+    border: none;
+    font-family: 'Arvo';
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.handwritten { font-style: italic; color: var(--accent); font-family: 'Georgia', serif; }
+.park-button:hover { background: var(--accent); }
