@@ -2,31 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NP Explorer | Discovery</title>
+    <title>NP Explorer | Generator</title>
     <link rel="stylesheet" href="park.css">
 </head>
 <body>
     <nav class="nav-bar">
         <a href="index.html">History</a>
-        <a href="stats.html">Stats</a>
+        <a href="stats.html">Statistics</a>
         <a href="generator.html">Generator</a>
     </nav>
 
     <div class="container" style="text-align: center;">
-        <h1>Discovery Compass</h1>
-        <p class="handwritten">Close your eyes and spin the dial...</p>
+        <h1>Adventure Compass</h1>
+        <p class="handwritten">Consult the logs to find your next destination...</p>
         
-        <button class="park-button" onclick="MyParkRanger.pickRandom()" style="padding: 20px 40px; background: var(--forest); color: white; border: none; font-family: 'Arvo'; cursor: pointer; border-radius: 50px;">
-            CONSULT THE WILD
+        <div class="photo-spot" style="width: 100px; height: 100px; margin: 20px auto; border-radius: 50%;"></div>
+
+        <button onclick="MyParkRanger.pickRandom()" style="background: var(--forest); color: white; padding: 15px 30px; border: none; font-family: 'Arvo'; cursor: pointer;">
+            SPIN THE DIAL
         </button>
 
-        <div id="result-display" style="margin-top: 50px;">
+        <div id="result-display" style="margin-top: 40px; min-height: 100px;">
             </div>
-        
-        <div class="gallery-grid" style="margin-top: 50px; opacity: 0.5;">
-            <div class="photo-frame" style="transform: rotate(2deg);"><img src="https://images.unsplash.com/photo-1533630733575-b90306346761?w=300" alt="Compass"></div>
-            <div class="photo-frame" style="transform: rotate(-2deg);"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=300" alt="Map"></div>
-        </div>
     </div>
 
     <script src="park.js"></script>
