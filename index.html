@@ -1,44 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>NP Explorer | History</title>
-    <link rel="stylesheet" href="park.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <div id="intro-overlay">
-        <div class="intro-content">
-            <h1>The Compass</h1>
-            <p>EST. 2026 | EXPLORE THE WILD</p>
-            <button class="ready-btn" onclick="enterSite()">READY TO GET GOING</button>
-        </div>
+<div id="intro-overlay">
+    <div class="intro-content">
+        <div style="font-size: 2rem; color: #A86B4C; margin-bottom: 10px;">▲</div>
+        <h1>The Compass</h1>
+        <p>EST. 2026 | EXPLORE THE WILD</p>
+        <button class="ready-btn" onclick="enterSite()">READY TO GET GOING</button>
     </div>
+</div>
 
-    <nav class="nav-bar">
-        <a href="index.html">History</a>
-        <a href="stats.html">Records</a>
-        <a href="generator.html">Discovery</a>
-    </nav>
+<script>
+    // Prevent scrolling while the intro is active
+    document.body.style.overflow = 'hidden';
 
-    <div class="container">
-        <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img tilt-right">
-
-        <h1>The Historical Foundation</h1>
-        <p>The American National Park system, often hailed as "America's Best Idea," began as a revolutionary democratic experiment to ensure that the nation's most sublime landscapes remained public property rather than private estates. This vision was formalized in 1872 when President Ulysses S. Grant signed the Yellowstone National Park Protection Act into law, creating the world's first national park. The movement gained its soul through the evocative writings of John Muir, who championed the spiritual and physical necessity of wild places, and its political momentum through Theodore Roosevelt, whose conservationist presidency protected over 230 million acres of public land. By the time the National Park Service was officially established in 1916 under the Organic Act, the mission had become a permanent part of the American identity: to conserve the scenery, the natural and historic objects, and the wild life therein for the enjoyment of future generations in a way that leaves them unimpaired for the future.</p>
-
-        <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img tilt-left" style="width: 70%;">
-    </div>
-
-    <script>
-        function enterSite() {
-            const overlay = document.getElementById('intro-overlay');
-            overlay.style.opacity = '0';
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 1500);
-        }
-    </script>
-</body>
-</html>
+    function enterSite() {
+        const overlay = document.getElementById('intro-overlay');
+        
+        // 1. Start the fade out
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none'; // Makes it click-through-able immediately
+        
+        // 2. Re-enable scrolling
+        document.body.style.overflow = 'auto';
+        
+        // 3. Remove from DOM after transition finishes so it's totally gone
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 1500); 
+    }
+</script>
