@@ -9,87 +9,74 @@
 
 body {
     background-color: var(--cream);
-    /* Subtle paper texture effect */
-    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+    background-image: url("https://www.transparenttextures.com/patterns/p6.png"); /* Paper texture */
     color: var(--ink);
     font-family: 'Lora', serif;
     margin: 0;
+    line-height: 1.8;
 }
 
-/* NAVIGATION - Artistic Ribbon */
+/* NAVIGATION */
 .nav-bar {
     background-color: var(--wood);
     display: flex;
     justify-content: center;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    border-bottom: 3px solid var(--forest);
+    padding: 1.2rem;
+    border-bottom: 4px solid var(--forest);
 }
 
 .nav-bar a {
     color: var(--paper);
     text-decoration: none;
-    margin: 0 25px;
+    margin: 0 20px;
     font-family: 'Arvo', serif;
     font-weight: bold;
-    letter-spacing: 2px;
     text-transform: uppercase;
-    transition: 0.3s;
+    font-size: 0.9rem;
 }
 
-.nav-bar a:hover { color: var(--accent); transform: scale(1.1); }
+.nav-bar a:hover { color: var(--accent); }
 
-/* THE SCRAPBOOK CONTAINER */
+/* SCRAPBOOK CONTAINER */
 .container { 
-    max-width: 1000px; 
-    margin: 50px auto; 
-    padding: 40px;
+    max-width: 900px; 
+    margin: 40px auto; 
+    padding: 50px;
     background: var(--paper);
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
-    border-radius: 2px;
-    position: relative;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e0ddd5;
 }
 
-/* POLAROID STYLE PHOTOS */
-.photo-frame {
-    background: white;
-    padding: 15px 15px 45px 15px;
-    box-shadow: 3px 5px 15px rgba(0,0,0,0.2);
-    display: inline-block;
-    transition: 0.3s;
-    border: 1px solid #ddd;
-}
+h1, h2, h3 { font-family: 'Arvo', serif; color: var(--forest); text-transform: uppercase; }
 
-.photo-frame img {
+/* THE "PHOTO SPOT" (Empty Polaroid) */
+.photo-spot {
+    background: #eee;
+    border: 1px solid #ccc;
     width: 100%;
-    height: auto;
-    display: block;
-    filter: sepia(20%); /* Adds a vintage look */
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px 0;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    background-image: repeating-linear-gradient(45deg, #fdfdfd, #fdfdfd 10px, #f9f9f9 10px, #f9f9f9 20px);
 }
 
-.photo-frame:hover {
-    transform: rotate(0deg) scale(1.05) !important;
-    z-index: 10;
+.photo-spot::after {
+    content: "FIELD SKETCH / PHOTO AREA";
+    font-family: 'Arvo', serif;
+    color: #bbb;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
 }
 
-/* PHOTO GALLERY GRID */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+/* LIST CARDS */
+.record-block {
+    margin-bottom: 40px;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
 }
 
-/* DECORATIVE ACCENTS */
-h1 { 
-    font-family: 'Arvo', serif; 
-    text-align: center;
-    border-bottom: 2px dashed var(--accent);
-    padding-bottom: 10px;
-}
-
-.handwritten {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    color: var(--accent);
-}
+.handwritten { font-style: italic; color: var(--accent); font-family: 'Georgia', serif; }
