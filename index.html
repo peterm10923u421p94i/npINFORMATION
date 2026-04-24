@@ -1,6 +1,9 @@
-<div id="intro-overlay">
-    <h1 style="color:white; font-family:'Arvo'; letter-spacing:10px;">THE COMPASS</h1>
-    <button class="action-btn" onclick="enterSite()">READY TO GET GOING</button>
+<div id="intro-overlay" class="overlay">
+    <div class="permit-box">
+        <h2>NATIONAL PARK SERVICE</h2>
+        <p>Official Archive Access: <strong>Authorized</strong></p>
+        <button class="action-btn" onclick="enterSite()">Ready to Get Going</button>
+    </div>
 </div>
 
 <nav class="nav-bar">
@@ -10,16 +13,16 @@
 </nav>
 
 <div class="container">
-    <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img" style="transform:rotate(2deg);">
+    <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img" style="transform: rotate(2deg);">
     <h1>Historical Foundation</h1>
-    <p>The system began in 1872...</p>
-    <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img" style="transform:rotate(-2deg);">
+    <p>In 1872, the world's first National Park was born. Yellowstone paved the way for a global movement of conservation...</p>
+    <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img" style="transform: rotate(-2deg);">
 </div>
 
 <script>
-    if(sessionStorage.getItem('entered')) document.getElementById('intro-overlay').style.display='none';
+    if(sessionStorage.getItem('visited')) document.getElementById('intro-overlay').style.display='none';
     function enterSite() {
-        sessionStorage.setItem('entered', 'true');
-        document.getElementById('intro-overlay').style.display='none';
+        sessionStorage.setItem('visited', 'true');
+        document.getElementById('intro-overlay').style.display = 'none';
     }
 </script>
