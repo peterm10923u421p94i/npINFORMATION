@@ -1,15 +1,31 @@
-#intro-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000; /* Increased to stay above everything */
-    opacity: 1;
-    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother cinematic curve */
-    pointer-events: all; /* Ensures button is clickable */
+/* SUSPENSE ANIMATIONS */
+.suspense-text {
+    font-family: 'Arvo', serif;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeInSlide 1s forwards;
+}
+
+.reveal-title {
+    font-family: 'Arvo', serif;
+    font-size: 3.5rem; /* Massive letters */
+    color: var(--forest);
+    letter-spacing: 10px;
+    margin-top: 20px;
+    opacity: 0;
+    animation: bigReveal 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+    text-shadow: 2px 2px 0px var(--wood);
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bigReveal {
+    0% { opacity: 0; transform: scale(0.5); filter: blur(10px); }
+    70% { transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
