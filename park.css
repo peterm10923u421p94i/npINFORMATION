@@ -1,79 +1,44 @@
-:root {
-    --forest: #2D4033;
-    --wood: #5C3A2E;
-    --cream: #F4EFE6;
-    --paper: #FAF9F6;
-    --ink: #332F2C;
-    --accent: #A86B4C;
-}
-
-body {
-    background-color: var(--cream);
-    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
-    color: var(--ink);
-    font-family: 'Lora', serif;
-    margin: 0;
-    line-height: 1.9;
-}
-
-/* NAVIGATION */
-.nav-bar {
-    background-color: var(--wood);
+/* WELCOME POP-UP (MODAL) */
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 64, 51, 0.85); /* Forest green tint */
     display: flex;
     justify-content: center;
-    padding: 1.5rem;
-    border-bottom: 4px solid var(--forest);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    align-items: center;
+    z-index: 2000;
 }
 
-.nav-bar a {
-    color: var(--paper);
-    text-decoration: none;
-    margin: 0 25px;
-    font-family: 'Arvo', serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* ARTISTIC CONTAINER */
-.container { 
-    max-width: 900px; 
-    margin: 50px auto; 
-    padding: 60px;
+.welcome-box {
     background: var(--paper);
-    box-shadow: 2px 2px 20px rgba(0,0,0,0.05);
-    position: relative;
+    padding: 50px;
+    text-align: center;
+    border: 8px double var(--wood);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 500px;
 }
 
-h1, h2, h3 { font-family: 'Arvo', serif; color: var(--forest); }
-
-/* SCRAPBOOK IMAGES */
-.scrapbook-img {
-    background: white;
-    padding: 12px 12px 30px 12px;
-    box-shadow: 5px 10px 25px rgba(0,0,0,0.15);
-    border: 1px solid #ddd;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 30px auto;
+.welcome-box h2 {
+    font-family: 'Arvo', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-.tilt-left { transform: rotate(-2deg); }
-.tilt-right { transform: rotate(2deg); }
-
-/* LISTS */
-.record-section { margin: 40px 0; border-top: 1px dashed var(--accent); padding-top: 20px; }
-
-.park-button {
+.ready-button {
     background: var(--forest);
     color: white;
-    padding: 18px 35px;
     border: none;
-    font-family: 'Arvo';
+    padding: 15px 30px;
+    font-family: 'Arvo', serif;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    text-transform: uppercase;
+    margin-top: 20px;
 }
 
-.park-button:hover { background: var(--accent); }
+.ready-button:hover {
+    background: var(--accent);
+}
