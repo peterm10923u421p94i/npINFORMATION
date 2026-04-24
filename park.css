@@ -11,72 +11,33 @@ body {
     color: var(--wood);
     font-family: 'Lora', serif;
     margin: 0;
+    line-height: 1.6;
 }
 
-/* Page Toggling Logic */
-.page-section { display: none; }
-.active { display: block; }
-
-/* Nav Bar */
 .nav-bar {
     background-color: var(--forest);
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding: 1.2rem;
     border-bottom: 5px solid var(--wood);
-    position: sticky;
-    top: 0;
 }
 
-.nav-bar button {
-    background: none;
-    border: none;
+.nav-bar a {
     color: white;
-    margin: 0 15px;
-    font-family: 'Arvo', serif;
+    text-decoration: none;
+    margin: 0 20px;
     font-weight: bold;
-    cursor: pointer;
     text-transform: uppercase;
 }
 
-.nav-bar button:hover { color: var(--trail-sign); }
+.active-link { color: var(--trail-sign); border-bottom: 2px solid var(--trail-sign); }
 
-/* Layout */
 .container { max-width: 800px; margin: 40px auto; padding: 20px; }
 
-h1 { font-family: 'Arvo', serif; text-transform: uppercase; }
+.park-img { width: 100%; border: 10px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-.park-img {
-    width: 100%;
-    border: 10px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+.stats-card { background: white; border: 2px solid var(--wood); padding: 20px; margin-bottom: 20px; }
 
-.stats-card {
-    background: white;
-    border: 2px solid var(--wood);
-    padding: 20px;
-    margin-bottom: 20px;
-}
+.gen-box { border: 3px dashed var(--wood); padding: 40px; background: white; }
 
-.official-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: var(--dirt);
-    font-weight: bold;
-}
-
-.gen-box {
-    text-align: center;
-    border: 3px dashed var(--wood);
-    padding: 40px;
-}
-
-.park-button {
-    background: var(--forest);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-family: 'Arvo';
-    cursor: pointer;
-}
+.park-button { background: var(--forest); color: white; border: none; padding: 15px 30px; cursor: pointer; }
