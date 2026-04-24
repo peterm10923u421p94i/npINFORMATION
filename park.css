@@ -7,55 +7,64 @@
     --accent: #A86B4C;
 }
 
-body {
-    background-color: var(--cream);
-    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
-    color: var(--ink);
-    font-family: 'Lora', serif;
-    margin: 0;
+body { background-color: var(--cream); color: var(--ink); font-family: 'Lora', serif; margin: 0; }
+
+/* --- RUSTIC BUTTONS --- */
+.action-btn {
+    background: var(--wood);
+    color: white;
+    border: 2px solid var(--forest);
+    padding: 12px 25px;
+    font-family: 'Arvo';
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 0px var(--forest);
+    transition: 0.2s;
+}
+.action-btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0px var(--forest); }
+
+/* --- SMALL POLAROID IMAGES --- */
+.scrapbook-img {
+    background: white;
+    padding: 8px 8px 20px 8px; /* Classic polaroid border */
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    max-width: 300px; /* Forces images to stay small */
+    height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
-/* --- THE RUSTIC MODAL (Used for both Intro and Generator) --- */
+/* --- THE DISCOVERY PAGE (Dark Theme) --- */
+.discovery-body {
+    background-color: #1a1a1a;
+    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+    color: var(--paper);
+    min-height: 100vh;
+}
+
+/* --- THE POP-UP OVERLAY --- */
 .overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(45, 64, 51, 0.9); /* Forest Green tint */
+    background: rgba(0, 0, 0, 0.85);
     display: flex; justify-content: center; align-items: center;
-    z-index: 9999;
-    backdrop-filter: blur(8px);
+    z-index: 10000;
 }
 
 .permit-box {
     background: var(--paper);
-    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
-    padding: 60px 40px;
+    padding: 40px;
     text-align: center;
     border: 2px solid var(--wood);
-    outline: 10px solid var(--paper);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    max-width: 500px;
-    position: relative;
-    transform: rotate(-1deg);
+    outline: 8px solid var(--paper);
+    max-width: 450px;
+    color: var(--ink);
 }
 
-/* Washi Tape Effect */
-.permit-box::before {
-    content: ""; position: absolute; top: -20px; left: 50%;
-    transform: translateX(-50%); width: 120px; height: 40px;
-    background: rgba(168, 107, 76, 0.5);
-}
+.permit-box h2 { font-family: 'Arvo'; color: var(--forest); margin-top: 0; }
 
-.permit-box h2 { font-family: 'Arvo'; font-size: 2.2rem; color: var(--forest); text-transform: uppercase; }
-
-/* SCRAPBOOK CONTENT */
-.nav-bar { background: var(--wood); padding: 1.5rem; display: flex; justify-content: center; }
-.nav-bar a { color: white; text-decoration: none; margin: 0 20px; font-family: 'Arvo'; font-weight: bold; }
-.container { max-width: 800px; margin: 50px auto; padding: 40px; background: var(--paper); box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
-.scrapbook-img { background: white; padding: 10px 10px 25px; border: 1px solid #ddd; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); display: block; margin: 20px auto; max-width: 100%; }
-.tilt-right { transform: rotate(2deg); }
-.tilt-left { transform: rotate(-2deg); }
-
-.action-btn {
-    background: var(--forest); color: white; border: none; padding: 15px 30px;
-    font-family: 'Arvo'; cursor: pointer; text-transform: uppercase; margin-top: 20px;
-}
+/* Shared formatting */
+.nav-bar { background: var(--wood); padding: 1rem; display: flex; justify-content: center; }
+.nav-bar a { color: white; text-decoration: none; margin: 0 15px; font-family: 'Arvo'; font-size: 0.9rem; }
+.container { max-width: 700px; margin: 30px auto; padding: 40px; background: var(--paper); }
