@@ -2,86 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Park Explorer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>National Parks | History</title>
     <link rel="stylesheet" href="park.css">
 </head>
 <body>
-
     <nav class="nav-bar">
-        <button onclick="showPage('history')">History</button>
-        <button onclick="showPage('stats')">Park Stats</button>
-        <button onclick="showPage('generator')">Generator</button>
+        <a href="index.html" class="active-link">History</a>
+        <a href="stats.html">Park Stats</a>
+        <a href="generator.html">Generator</a>
     </nav>
 
-    <section id="history" class="page-section active">
-        <div class="container">
-            <h1>The History of America's Best Idea</h1>
-            
-            <img src="https://images.unsplash.com/photo-1599052041283-9b16be244908?auto=format&fit=crop&q=80&w=1000" alt="Old Faithful Inn Lodge" class="park-img">
-            
-            <div class="history-content">
-                <p>The National Park concept was a revolutionary democratic idea: that the most beautiful and sacred lands should belong to all people, not just the wealthy. In 1872, <strong>Yellowstone</strong> was established as the first national park in the world.</p>
-                
-                <p>Key figures in this movement included <strong>John Muir</strong>, the "Father of the National Parks," whose activism saved the Yosemite Valley, and <strong>Theodore Roosevelt</strong>, who used his presidency to protect over 230 million acres of public land. In 1916, the National Park Service was officially created to manage these treasures for "future generations."</p>
-                
-                <p>Today, these parks serve as living museums of nature, preserving everything from the deep canyons of Arizona to the ancient redwoods of California.</p>
-            </div>
-            
-            <a href="https://www.nps.gov" target="_blank" class="official-link">Visit the Official NPS Website →</a>
-        </div>
-    </section>
-
-    <section id="stats" class="page-section">
-        <div class="container">
-            <h1>National Park Statistics</h1>
-            
-            <div class="stats-card">
-                <h3>Most Visited Parks (2023)</h3>
-                <ol>
-                    <li>Great Smoky Mountains (13.3M)</li>
-                    <li>Grand Canyon (4.7M)</li>
-                    <li>Zion (4.6M)</li>
-                    <li>Yellowstone (4.5M)</li>
-                    <li>Rocky Mountain (4.1M)</li>
-                </ol>
-            </div>
-
-            <div class="stats-card">
-                <h3>Largest Parks (Acres)</h3>
-                <ul>
-                    <li>Wrangell-St. Elias (13.2M)</li>
-                    <li>Gates of the Arctic (8.4M)</li>
-                    <li>Denali (6.1M)</li>
-                    <li>Katmai (4.1M)</li>
-                    <li>Death Valley (3.4M)</li>
-                </ul>
-            </div>
-
-            <div class="stats-card">
-                <h3>Least Visited Parks</h3>
-                <ul>
-                    <li>National Park of American Samoa</li>
-                    <li>Gates of the Arctic</li>
-                    <li>Kobuk Valley</li>
-                    <li>Isle Royale</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="generator" class="page-section">
-        <div class="container">
-            <h1>Adventure Generator</h1>
-            <div class="gen-box">
-                <p>Unsure where the trail leads? Let the compass decide.</p>
-                <button class="park-button" onclick="MyParkRanger.pickRandom()">SPIN THE COMPASS</button>
-                <div id="result-display">Your journey begins here...</div>
-            </div>
-        </div>
-    </section>
-
-    <script src="park.js"></script>
+    <div class="container">
+        <h1>The History of America's Best Idea</h1>
+        <img src="https://images.unsplash.com/photo-1599052041283-9b16be244908?auto=format&fit=crop&q=80&w=1000" alt="Old Faithful Inn Lodge" class="park-img">
+        
+        <p>The National Park concept was a revolutionary idea: that the most beautiful lands should belong to all people. In 1872, <strong>Yellowstone</strong> became the first national park in the world.</p>
+        <p>Figures like <strong>John Muir</strong> and <strong>Theodore Roosevelt</strong> fought to protect these lands from industrial expansion, leading to the creation of the National Park Service in 1916.</p>
+        
+        <a href="https://www.nps.gov" target="_blank" class="official-link">Official NPS Website →</a>
+    </div>
 </body>
 </html>
