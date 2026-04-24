@@ -1,110 +1,61 @@
 :root {
-    --forest: #1a241e;
-    --wood: #3d2b1f;
+    --forest: #2D4033;
+    --wood: #5C3A2E;
     --cream: #F4EFE6;
     --paper: #FAF9F6;
-    --ink: #111;
-    --accent: #d48a5f;
+    --ink: #332F2C;
+    --accent: #A86B4C;
 }
 
 body {
     background-color: var(--cream);
+    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
     color: var(--ink);
     font-family: 'Lora', serif;
     margin: 0;
-    overflow-x: hidden;
 }
 
-/* --- THE FULL-SCREEN INTRO (Initial Load) --- */
-#intro-overlay {
+/* --- THE RUSTIC MODAL (Used for both Intro and Generator) --- */
+.overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    transition: all 1.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(45, 64, 51, 0.9); /* Forest Green tint */
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(8px);
 }
 
-.intro-content h1 {
-    font-family: 'Arvo';
-    color: white;
-    font-size: 5rem;
-    letter-spacing: 20px;
-    animation: movieTitle 4s infinite ease-in-out;
-}
-
-@keyframes movieTitle {
-    0% { transform: scale(0.9); opacity: 0.3; filter: blur(10px); }
-    50% { opacity: 1; filter: blur(0px); }
-    100% { transform: scale(1.1); opacity: 0.3; filter: blur(10px); }
-}
-
-/* --- FULL-SCREEN GENERATOR "VIDEO" --- */
-#video-stage {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #000;
-    z-index: 9000;
-    display: none; /* Controlled by JS */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
+.permit-box {
+    background: var(--paper);
+    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+    padding: 60px 40px;
     text-align: center;
+    border: 2px solid var(--wood);
+    outline: 10px solid var(--paper);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    max-width: 500px;
+    position: relative;
+    transform: rotate(-1deg);
 }
 
-.suspense-step {
-    font-family: 'Arvo';
-    font-size: 1.2rem;
-    letter-spacing: 6px;
-    margin: 10px 0;
-    color: #888;
-    animation: flicker 0.1s infinite alternate;
+/* Washi Tape Effect */
+.permit-box::before {
+    content: ""; position: absolute; top: -20px; left: 50%;
+    transform: translateX(-50%); width: 120px; height: 40px;
+    background: rgba(168, 107, 76, 0.5);
 }
 
-.reveal-main {
-    font-family: 'Arvo';
-    font-size: 6rem;
-    color: var(--accent);
-    letter-spacing: 15px;
-    margin: 30px 0;
-    animation: slamIn 0.5s forwards;
-}
+.permit-box h2 { font-family: 'Arvo'; font-size: 2.2rem; color: var(--forest); text-transform: uppercase; }
 
-.known-for {
-    font-family: 'Lora';
-    font-style: italic;
-    font-size: 1.8rem;
-    color: #fff;
-    max-width: 800px;
-    animation: fadeIn 2s forwards;
-}
+/* SCRAPBOOK CONTENT */
+.nav-bar { background: var(--wood); padding: 1.5rem; display: flex; justify-content: center; }
+.nav-bar a { color: white; text-decoration: none; margin: 0 20px; font-family: 'Arvo'; font-weight: bold; }
+.container { max-width: 800px; margin: 50px auto; padding: 40px; background: var(--paper); box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+.scrapbook-img { background: white; padding: 10px 10px 25px; border: 1px solid #ddd; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); display: block; margin: 20px auto; max-width: 100%; }
+.tilt-right { transform: rotate(2deg); }
+.tilt-left { transform: rotate(-2deg); }
 
-/* Close button for the full-screen reveal */
-.exit-video {
-    position: absolute;
-    bottom: 50px;
-    background: transparent;
-    border: 1px solid #555;
-    color: #555;
-    padding: 10px 20px;
-    cursor: pointer;
+.action-btn {
+    background: var(--forest); color: white; border: none; padding: 15px 30px;
+    font-family: 'Arvo'; cursor: pointer; text-transform: uppercase; margin-top: 20px;
 }
-
-.exit-video:hover { color: white; border-color: white; }
-
-/* ANIMATIONS */
-@keyframes flicker { 0% { opacity: 0.8; } 100% { opacity: 1; } }
-@keyframes slamIn { 
-    0% { transform: scale(5); opacity: 0; filter: blur(20px); } 
-    100% { transform: scale(1); opacity: 1; filter: blur(0); } 
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
