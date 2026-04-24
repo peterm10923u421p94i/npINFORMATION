@@ -1,8 +1,8 @@
 <div id="intro-overlay" class="overlay">
     <div class="permit-box">
-        <h2>Welcome to the National Park Compass</h2>
-        <p>Your entry permit is authorized.</p>
-        <button class="action-btn" onclick="enterSite()">Ready to Get Going</button>
+        <h2>NATIONAL PARK SERVICE</h2>
+        <p>Entry Permit #2026: <strong>Authorized</strong></p>
+        <button class="action-btn" onclick="enterSite()">Enter Archives</button>
     </div>
 </div>
 
@@ -13,14 +13,16 @@
 </nav>
 
 <div class="container">
-    <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img tilt-right">
+    <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img" style="transform:rotate(2deg);">
+    
     <h1>Historical Foundation</h1>
-    <p>The American National Park system began as a revolutionary experiment...</p>
-    <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img tilt-left">
+    <p>The system began in 1872...</p>
+
+    <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img" style="transform:rotate(-2deg);">
 </div>
 
 <script>
-    if(sessionStorage.getItem('entered')) { document.getElementById('intro-overlay').style.display='none'; }
+    if(sessionStorage.getItem('entered')) document.getElementById('intro-overlay').style.display='none';
     function enterSite() {
         sessionStorage.setItem('entered', 'true');
         document.getElementById('intro-overlay').style.display='none';
