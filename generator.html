@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>NP Explorer | Discovery</title>
     <link rel="stylesheet" href="park.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: #1a1a1a;"> <nav class="nav-bar">
+<body>
+    <nav class="nav-bar">
         <a href="index.html">History</a>
         <a href="stats.html">Records</a>
         <a href="generator.html">Discovery</a>
     </nav>
 
-    <div id="gen-overlay" class="overlay" style="display:none;">
-        <div class="permit-box" id="gen-content">
-            </div>
-    </div>
+    <div class="container" style="text-align: center;">
+        <h1>The Discovery Compass</h1>
+        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img tilt-right" style="max-width: 400px; margin: 40px auto;">
+        
+        <button class="ready-btn" onclick="MyParkRanger.pickRandom()" style="color: black; border-color: black;">CONSULT THE WILD</button>
 
-    <div class="container" style="text-align: center; margin-top: 100px;">
-        <h1 style="font-family:'Arvo';">The Discovery Compass</h1>
-        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img">
-        <p style="margin-bottom: 30px;">Identify your next journey within the 63 protected lands.</p>
-        <button class="action-btn" onclick="MyParkRanger.pickRandom()">Consult the Wild</button>
+        <div id="result-display" style="margin-top: 40px; min-height: 100px;">
+            <em>Ready for departure...</em>
+        </div>
     </div>
 
     <script src="park.js"></script>
