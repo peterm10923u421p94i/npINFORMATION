@@ -1,20 +1,33 @@
-<nav class="nav-bar">
-    <a href="index.html">History</a>
-    <a href="stats.html">Records</a>
-    <a href="generator.html">Discovery</a>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="park.css">
+</head>
+<body class="discovery-body">
 
-<div id="gen-overlay" class="overlay" style="display:none;">
-    <div class="permit-box">
-        <h2 id="gen-title">Searching...</h2>
-        <div id="gen-details"></div>
+    <nav class="nav-bar">
+        <a href="index.html">History</a>
+        <a href="stats.html">Records</a>
+        <a href="generator.html">Discovery</a>
+    </nav>
+
+    <div id="gen-overlay" class="overlay" style="display:none;">
+        <div class="permit-box">
+            <h2 id="gen-title">Scanning...</h2>
+            <div id="gen-details"></div>
+        </div>
     </div>
-</div>
 
-<div class="container" style="text-align: center;">
-    <h1>Discovery Compass</h1>
-    <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img tilt-right">
-    <button class="action-btn" onclick="window.MyParkRanger.pickRandom()">CONSULT THE WILD</button>
-</div>
+    <div style="text-align: center; padding-top: 100px;">
+        <h1 style="font-family:'Arvo'; letter-spacing: 5px;">DISCOVERY COMPASS</h1>
+        <p style="font-style:italic;">Consult the wild archives to find your next journey.</p>
+        
+        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img">
+        
+        <br>
+        <button class="action-btn" onclick="window.MyParkRanger.pickRandom()">Consult the Wild</button>
+    </div>
 
-<script src="park.js"></script>
+    <script src="park.js"></script>
+</body>
+</html>
