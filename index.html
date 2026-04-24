@@ -5,87 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>National Park Explorer</title>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- RUSTIC CSS (park.css) --- */
-        :root {
-            --forest: #2D4033;
-            --wood: #5C3A2E;
-            --parchment: #F4EFE6;
-            --dirt: #8B5E3C;
-            --trail-sign: #E9D758;
-        }
+    <link rel="stylesheet" href="park.css">
+</head>
+<body>
 
-        body {
-            background-color: var(--parchment);
-            color: var(--wood);
-            font-family: 'Lora', serif;
-            margin: 0;
-            line-height: 1.8;
-        }
+    <nav class="nav-bar">
+        <button onclick="showPage('history')">History</button>
+        <button onclick="showPage('stats')">Park Stats</button>
+        <button onclick="showPage('generator')">Generator</button>
+    </nav>
 
-        /* NAVIGATION */
-        .nav-bar {
-            background-color: var(--forest);
-            display: flex;
-            justify-content: center;
-            padding: 1.2rem;
-            border-bottom: 6px solid var(--wood);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    <section id="history" class="page-section active">
+        <div class="container">
+            <h1>The History of America's Best Idea</h1>
+            
+            <img src="https://images.unsplash.com/photo-1599052041283-9b16be244908?auto=format&fit=crop&q=80&w=1000" alt="Old Faithful Inn Lodge" class="park-img">
+            
+            <div class="history-content">
+                <p>The National Park concept was a revolutionary democratic idea: that the most beautiful and sacred lands should belong to all people, not just the wealthy. In 1872, <strong>Yellowstone</strong> was established as the first national park in the world.</p>
+                
+                <p>Key figures in this movement included <strong>John Muir</strong>, the "Father of the National Parks," whose activism saved the Yosemite Valley, and <strong>Theodore Roosevelt</strong>, who used his presidency to protect over 230 million acres of public land. In 1916, the National Park Service was officially created to manage these treasures for "future generations."</p>
+                
+                <p>Today, these parks serve as living museums of nature, preserving everything from the deep canyons of Arizona to the ancient redwoods of California.</p>
+            </div>
+            
+            <a href="https://www.nps.gov" target="_blank" class="official-link">Visit the Official NPS Website →</a>
+        </div>
+    </section>
 
-        .nav-bar button {
-            background: none;
-            border: none;
-            color: white;
-            margin: 0 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-family: 'Arvo', serif;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
+    <section id="stats" class="page-section">
+        <div class="container">
+            <h1>National Park Statistics</h1>
+            
+            <div class="stats-card">
+                <h3>Most Visited Parks (2023)</h3>
+                <ol>
+                    <li>Great Smoky Mountains (13.3M)</li>
+                    <li>Grand Canyon (4.7M)</li>
+                    <li>Zion (4.6M)</li>
+                    <li>Yellowstone (4.5M)</li>
+                    <li>Rocky Mountain (4.1M)</li>
+                </ol>
+            </div>
 
-        .nav-bar button:hover { color: var(--trail-sign); }
+            <div class="stats-card">
+                <h3>Largest Parks (Acres)</h3>
+                <ul>
+                    <li>Wrangell-St. Elias (13.2M)</li>
+                    <li>Gates of the Arctic (8.4M)</li>
+                    <li>Denali (6.1M)</li>
+                    <li>Katmai (4.1M)</li>
+                    <li>Death Valley (3.4M)</li>
+                </ul>
+            </div>
 
-        /* CONTENT VISIBILITY LOGIC */
-        .page-section { display: none; } /* Hidden by default */
-        .active { display: block; }      /* Shown when active */
+            <div class="stats-card">
+                <h3>Least Visited Parks</h3>
+                <ul>
+                    <li>National Park of American Samoa</li>
+                    <li>Gates of the Arctic</li>
+                    <li>Kobuk Valley</li>
+                    <li>Isle Royale</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
+    <section id="generator" class="page-section">
+        <div class="container">
+            <h1>Adventure Generator</h1>
+            <div class="gen-box">
+                <p>Unsure where the trail leads? Let the compass decide.</p>
+                <button class="park-button" onclick="MyParkRanger.pickRandom()">SPIN THE COMPASS</button>
+                <div id="result-display">Your journey begins here...</div>
+            </div>
+        </div>
+    </section>
 
-        h1, h2 { font-family: 'Arvo', serif; text-transform: uppercase; color: var(--forest); }
-
-        .park-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border: 12px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-
-        .stats-card {
-            background: white;
-            border: 2px solid var(--wood);
-            padding: 25px;
-            margin-bottom: 20px;
-        }
-
-        .official-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--dirt);
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        /* GENERATOR STYLES */
-        .gen-container {
-            text-align: center;
-            padding: 50px;
-            background: white;
-            border: 3px dashed var(--wood
+    <script src="park.js"></script>
+</body>
+</html>
