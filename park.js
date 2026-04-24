@@ -1,24 +1,26 @@
-<script>
-    const overlay = document.getElementById('intro-overlay');
-
-    // Check if the user has already entered the site this session
-    if (sessionStorage.getItem('hasEntered')) {
-        overlay.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    } else {
-        document.body.style.overflow = 'hidden';
-    }
-
-    function enterSite() {
-        // Mark as entered so it doesn't show again on refresh/link click
-        sessionStorage.setItem('hasEntered', 'true');
-        
-        overlay.style.opacity = '0';
-        overlay.style.pointerEvents = 'none';
-        document.body.style.overflow = 'auto';
-        
-        setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 1500); 
-    }
-</script>
+class ParkGenerator {
+    constructor() {
+        this.usParks = [
+            { name: "Acadia", state: "ME", year: "1919" },
+            { name: "American Samoa", state: "AS", year: "1988" },
+            { name: "Arches", state: "UT", year: "1971" },
+            { name: "Badlands", state: "SD", year: "1978" },
+            { name: "Big Bend", state: "TX", year: "1944" },
+            { name: "Biscayne", state: "FL", year: "1980" },
+            { name: "Black Canyon of the Gunnison", state: "CO", year: "1999" },
+            { name: "Bryce Canyon", state: "UT", year: "1928" },
+            { name: "Canyonlands", state: "UT", year: "1964" },
+            { name: "Capitol Reef", state: "UT", year: "1971" },
+            { name: "Carlsbad Caverns", state: "NM", year: "1930" },
+            { name: "Channel Islands", state: "CA", year: "1980" },
+            { name: "Congaree", state: "SC", year: "2003" },
+            { name: "Crater Lake", state: "OR", year: "1902" },
+            { name: "Cuyahoga Valley", state: "OH", year: "2000" },
+            { name: "Death Valley", state: "CA/NV", year: "1994" },
+            { name: "Denali", state: "AK", year: "1917" },
+            { name: "Dry Tortugas", state: "FL", year: "1992" },
+            { name: "Everglades", state: "FL", year: "1947" },
+            { name: "Gates of the Arctic", state: "AK", year: "1980" },
+            { name: "Gateway Arch", state: "MO", year: "2018" },
+            { name: "Glacier", state: "MT", year: "1910" },
+            { name: "Glacier Bay", state:
