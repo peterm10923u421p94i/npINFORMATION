@@ -2,17 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NP Explorer | Discovery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NP Explorer | Discovery Compass</title>
     <link rel="stylesheet" href="park.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="nav-bar"><a href="index.html">History</a><a href="stats.html">Records</a><a href="generator.html">Discovery</a></nav>
-    <div class="container" style="text-align: center; min-height: 500px;">
+
+    <nav class="nav-bar">
+        <a href="index.html">History</a>
+        <a href="stats.html">Records</a>
+        <a href="generator.html">Discovery</a>
+    </nav>
+
+    <div class="container" style="text-align: center; min-height: 700px;">
+        
         <h1>Discovery Compass</h1>
-        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img tilt-right" style="max-width: 400px;">
-        <button class="ready-btn" onclick="MyParkRanger.pickRandom()" style="color:black; border-color:black; margin: 20px 0;">CONSULT THE WILD</button>
-        <div id="result-display"><em>Ready for departure...</em></div>
+        
+        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img tilt-right" style="max-width: 400px; margin: 40px auto;">
+        
+        <p class="handwritten">Consult the logs to find your next destination...</p>
+
+        <div style="margin: 40px 0;">
+            <button class="ready-btn" onclick="window.MyParkRanger.pickRandom()" style="color: black; border-color: black; padding: 20px 50px; font-size: 1.2rem;">
+                CONSULT THE WILD
+            </button>
+        </div>
+
+        <div id="result-display" style="margin-top: 50px; padding-bottom: 50px;">
+            <em style="opacity: 0.5;">Awaiting command...</em>
+        </div>
+
     </div>
+
     <script src="park.js"></script>
+
 </body>
 </html>
