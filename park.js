@@ -1,37 +1,104 @@
 class ParkGenerator {
     constructor() {
         this.usParks = [
-            { name: "Yellowstone", state: "WY/MT/ID", year: "1872", known: "its erupting geysers and colorful hot springs." },
-            { name: "Yosemite", state: "CA", year: "1890", known: "its massive granite cliffs and waterfalls." },
-            { name: "Zion", state: "UT", year: "1919", known: "deep red sandstone canyons." },
-            // ... (Insert the rest of the 63 parks here)
+            { name: "Acadia", state: "ME", year: "1919" },
+            { name: "Arches", state: "UT", year: "1971" },
+            { name: "Badlands", state: "SD", year: "1978" },
+            { name: "Big Bend", state: "TX", year: "1944" },
+            { name: "Biscayne", state: "FL", year: "1980" },
+            { name: "Black Canyon of the Gunnison", state: "CO", year: "1999" },
+            { name: "Bryce Canyon", state: "UT", year: "1928" },
+            { name: "Canyonlands", state: "UT", year: "1964" },
+            { name: "Capitol Reef", state: "UT", year: "1971" },
+            { name: "Carlsbad Caverns", state: "NM", year: "1930" },
+            { name: "Channel Islands", state: "CA", year: "1980" },
+            { name: "Congaree", state: "SC", year: "2003" },
+            { name: "Crater Lake", state: "OR", year: "1902" },
+            { name: "Cuyahoga Valley", state: "OH", year: "2000" },
+            { name: "Death Valley", state: "CA/NV", year: "1994" },
+            { name: "Denali", state: "AK", year: "1917" },
+            { name: "Dry Tortugas", state: "FL", year: "1992" },
+            { name: "Everglades", state: "FL", year: "1947" },
+            { name: "Gates of the Arctic", state: "AK", year: "1980" },
+            { name: "Gateway Arch", state: "MO", year: "2018" },
+            { name: "Glacier", state: "MT", year: "1910" },
+            { name: "Glacier Bay", state: "AK", year: "1980" },
+            { name: "Grand Canyon", state: "AZ", year: "1919" },
+            { name: "Grand Teton", state: "WY", year: "1929" },
+            { name: "Great Basin", state: "NV", year: "1986" },
+            { name: "Great Sand Dunes", state: "CO", year: "2004" },
+            { name: "Great Smoky Mountains", state: "TN/NC", year: "1934" },
+            { name: "Guadalupe Mountains", state: "TX", year: "1966" },
+            { name: "Haleakalā", state: "HI", year: "1916" },
+            { name: "Hawaiʻi Volcanoes", state: "HI", year: "1916" },
+            { name: "Hot Springs", state: "AR", year: "1921" },
+            { name: "Indiana Dunes", state: "IN", year: "2019" },
+            { name: "Isle Royale", state: "MI", year: "1940" },
+            { name: "Joshua Tree", state: "CA", year: "1994" },
+            { name: "Katmai", state: "AK", year: "1980" },
+            { name: "Kenai Fjords", state: "AK", year: "1980" },
+            { name: "Kings Canyon", state: "CA", year: "1940" },
+            { name: "Kobuk Valley", state: "AK", year: "1980" },
+            { name: "Lake Clark", state: "AK", year: "1980" },
+            { name: "Lassen Volcanic", state: "CA", year: "1916" },
+            { name: "Mammoth Cave", state: "KY", year: "1941" },
+            { name: "Mesa Verde", state: "CO", year: "1906" },
+            { name: "Mount Rainier", state: "WA", year: "1899" },
+            { name: "New River Gorge", state: "WV", year: "2020" },
+            { name: "North Cascades", state: "WA", year: "1968" },
+            { name: "Olympic", state: "WA", year: "1938" },
+            { name: "Petrified Forest", state: "AZ", year: "1962" },
+            { name: "Pinnacles", state: "CA", year: "2013" },
+            { name: "Redwood", state: "CA", year: "1968" },
+            { name: "Rocky Mountain", state: "CO", year: "1915" },
+            { name: "Saguaro", state: "AZ", year: "1994" },
+            { name: "Sequoia", state: "CA", year: "1890" },
+            { name: "Shenandoah", state: "VA", year: "1935" },
+            { name: "Theodore Roosevelt", state: "ND", year: "1978" },
+            { name: "Virgin Islands", state: "VI", year: "1956" },
+            { name: "Voyageurs", state: "MN", year: "1975" },
+            { name: "White Sands", state: "NM", year: "2019" },
+            { name: "Wind Cave", state: "SD", year: "1903" },
+            { name: "Wrangell–St. Elias", state: "AK", year: "1980" },
+            { name: "Yellowstone", state: "WY/MT/ID", year: "1872" },
+            { name: "Yosemite", state: "CA", year: "1890" },
+            { name: "Zion", state: "UT", year: "1919" }
         ];
     }
 
     pickRandom() {
         const park = this.usParks[Math.floor(Math.random() * this.usParks.length)];
-        const overlay = document.getElementById('gen-overlay');
-        const display = document.getElementById('gen-content');
+        const display = document.getElementById('result-display');
         
-        overlay.style.display = 'flex';
-        display.innerHTML = "<h2>CONSULTING ARCHIVES...</h2>";
+        // Clear previous results
+        display.innerHTML = "";
 
+        // Sequence 1: Year Founded
         setTimeout(() => {
-            display.innerHTML = `<h2>ESTABLISHED ${park.year}</h2>`;
-        }, 1200);
+            const yearEl = document.createElement('p');
+            yearEl.className = "suspense-text";
+            yearEl.innerText = `ESTABLISHED ${park.year}`;
+            display.appendChild(yearEl);
+        }, 500);
 
+        // Sequence 2: State
         setTimeout(() => {
-            display.innerHTML = `<h2 style="color:#A86B4C">LOCATED IN ${park.state}</h2>`;
-        }, 2400);
+            const stateEl = document.createElement('p');
+            stateEl.className = "suspense-text";
+            stateEl.style.color = "#A86B4C";
+            stateEl.innerText = `LOCATED IN ${park.state}`;
+            display.appendChild(stateEl);
+        }, 1500);
 
+        // Sequence 3: THE REVEAL (Park Name)
         setTimeout(() => {
-            display.innerHTML = `
-                <h2 style="font-size:2.5rem">${park.name.toUpperCase()}</h2>
-                <p style="font-style:italic; margin: 20px 0;">Known for ${park.known}</p>
-                <button class="action-btn" onclick="document.getElementById('gen-overlay').style.display='none'">Back to Compass</button>
-            `;
-        }, 3600);
+            const nameEl = document.createElement('h2');
+            nameEl.className = "reveal-title";
+            nameEl.innerText = `${park.name.toUpperCase()}`;
+            display.appendChild(nameEl);
+        }, 2800);
     }
 }
 
+// Global initialization so the HTML can "see" it
 const MyParkRanger = new ParkGenerator();
