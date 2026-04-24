@@ -4,21 +4,17 @@
     <a href="generator.html">Discovery</a>
 </nav>
 
-<div id="video-stage"></div>
+<div id="gen-overlay" class="overlay" style="display:none;">
+    <div class="permit-box">
+        <h2 id="gen-title">Searching...</h2>
+        <div id="gen-details"></div>
+    </div>
+</div>
 
 <div class="container" style="text-align: center;">
     <h1>Discovery Compass</h1>
-    <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img tilt-right" style="max-width: 400px; margin: 40px auto;">
-    
-    <div style="margin: 40px 0;">
-        <button class="ready-btn" onclick="window.MyParkRanger.pickRandom()" style="color: black; border-color: black; padding: 20px 50px;">
-            INITIATE SCAN
-        </button>
-    </div>
-
-    <div id="result-display">
-        <p>System Ready...</p>
-    </div>
+    <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img tilt-right">
+    <button class="action-btn" onclick="window.MyParkRanger.pickRandom()">CONSULT THE WILD</button>
 </div>
 
 <script src="park.js"></script>
