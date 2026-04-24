@@ -1,4 +1,5 @@
-/* --- THE RUSTIC COLOR PALETTE --- */
+/* Add these to your existing park.css or replace it entirely */
+
 :root {
     --forest: #2D4033;
     --wood: #5C3A2E;
@@ -10,62 +11,77 @@
 body {
     background-color: var(--parchment);
     color: var(--wood);
-    font-family: 'Georgia', serif;
+    font-family: 'Lora', serif;
     margin: 0;
-    padding: 0;
+    line-height: 1.6;
 }
 
-/* --- NAVIGATION MENU --- */
-.nav-bar {
-    background-color: var(--forest);
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 1.5rem;
-    border-bottom: 5px solid var(--wood);
-}
-
-.nav-bar a {
     color: white;
-    text-decoration: none;
-    margin: 0 25px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.nav-bar a:hover {
-    color: var(--trail-sign);
-}
-
-/* --- ADVENTURE CARD STYLES --- */
-.adventure-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 40px;
-    border: 3px solid var(--wood);
-    background-color: white;
-    box-shadow: 15px 15px 0px var(--dirt);
     text-align: center;
 }
 
-.park-button {
+.hero h1 { font-size: 3.5rem; margin-bottom: 10px; font-family: 'Arvo', serif; }
+
+/* HISTORY GRID */
+.content-section { padding: 60px 0; }
+.info-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.image-block img {
+    width: 100%;
+    border: 10px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.caption { font-style: italic; font-size: 0.9rem; text-align: center; }
+
+/* STATS SECTION */
+.stats-section {
     background-color: var(--forest);
     color: white;
-    border: 2px solid var(--wood);
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-family: 'Courier New', monospace;
-    transition: transform 0.1s;
+    padding: 60px 0;
 }
 
-.park-button:active {
-    transform: scale(0.95);
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-#result-display {
-    margin-top: 30px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--dirt);
+.stat-card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 4px solid var(--trail-sign);
+}
+
+.stat-card h3 { color: var(--trail-sign); margin-top: 0; }
+
+/* FOOTER */
+footer {
+    background: var(--wood);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 50px;
 }
