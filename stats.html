@@ -2,45 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>National Parks | Stats</title>
+    <title>NP Explorer | Records</title>
     <link rel="stylesheet" href="park.css">
 </head>
 <body>
     <nav class="nav-bar">
         <a href="index.html">History</a>
-        <a href="stats.html" class="active-link">Park Stats</a>
+        <a href="stats.html">Stats</a>
         <a href="generator.html">Generator</a>
     </nav>
 
     <div class="container">
-        <h1>Park Statistics</h1>
+        <h1>Park Records & Archives</h1>
         
-        <div class="stats-card">
-            <h3>Most Visited Parks</h3>
-            <ol>
-                <li>Great Smoky Mountains (13.3M)</li>
-                <li>Grand Canyon (4.7M)</li>
-                <li>Zion (4.6M)</li>
-                <li>Yellowstone (4.5M)</li>
-            </ol>
+        <div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 50px;">
+            <div style="flex: 1;">
+                <h3>The Most Walked Trails</h3>
+                <ol>
+                    <li>Great Smoky Mountains (13.3M)</li>
+                    <li>Grand Canyon (4.7M)</li>
+                    <li>Zion (4.6M)</li>
+                </ol>
+            </div>
+            <div class="photo-frame" style="width: 250px; transform: rotate(5deg);">
+                <img src="https://images.unsplash.com/photo-1500674425917-09f449265691?w=300" alt="Smoky Mountains">
+                <p class="handwritten">The Mist of the Smokies</p>
+            </div>
         </div>
 
-        <div class="stats-card">
-            <h3>Largest Parks (Acres)</h3>
-            <ul>
-                <li>Wrangell-St. Elias (13.2M)</li>
-                <li>Gates of the Arctic (8.4M)</li>
-                <li>Denali (6.1M)</li>
-            </ul>
-        </div>
-
-        <div class="stats-card">
-            <h3>Least Visited Parks</h3>
-            <ul>
-                <li>National Park of American Samoa</li>
-                <li>Gates of the Arctic</li>
-                <li>Kobuk Valley</li>
-            </ul>
+        <div style="display: flex; gap: 40px; align-items: flex-start;">
+            <div class="photo-frame" style="width: 250px; transform: rotate(-3deg);">
+                <img src="https://images.unsplash.com/photo-1500674425917-09f449265691?w=300" alt="Alaskan Wilderness">
+                <p class="handwritten">Untouched Alaska</p>
+            </div>
+            <div style="flex: 1;">
+                <h3>The Giants (Largest Acres)</h3>
+                <ul>
+                    <li>Wrangell-St. Elias (13.2M)</li>
+                    <li>Gates of the Arctic (8.4M)</li>
+                    <li>Denali (6.1M)</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
