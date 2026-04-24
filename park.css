@@ -1,3 +1,4 @@
+/* --- THE RUSTIC COLOR PALETTE --- */
 :root {
     --forest: #2D4033;
     --wood: #5C3A2E;
@@ -7,71 +8,17 @@
     --accent: #A86B4C;
 }
 
+/* --- BASE STYLES --- */
 body {
     background-color: var(--cream);
-    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+    background-image: url("https://www.transparenttextures.com/patterns/p6.png"); /* Subtle paper texture */
     color: var(--ink);
     font-family: 'Lora', serif;
     margin: 0;
-    line-height: 1.9;
+    line-height: 1.8;
 }
 
-/* --- CINEMATIC INTRO ANIMATION --- */
-#intro-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000; /* Deep black cinematic background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 1.5s ease-in-out;
-}
-
-.intro-content {
-    text-align: center;
-    color: white;
-    animation: fadeInScale 3s ease-out;
-}
-
-.intro-content h1 {
-    font-family: 'Arvo', serif;
-    font-size: 3.5rem;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    color: white;
-}
-
-.intro-content p {
-    font-style: italic;
-    letter-spacing: 3px;
-    opacity: 0.8;
-}
-
-@keyframes fadeInScale {
-    0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
-    100% { opacity: 1; transform: scale(1); filter: blur(0); }
-}
-
-.ready-btn {
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 15px 40px;
-    font-family: 'Arvo';
-    cursor: pointer;
-    margin-top: 40px;
-    transition: 0.3s;
-    letter-spacing: 2px;
-}
-
-.ready-btn:hover { background: white; color: black; }
-
-/* --- SCRAPBOOK LAYOUT --- */
+/* --- NAVIGATION --- */
 .nav-bar {
     background-color: var(--wood);
     display: flex;
@@ -87,27 +34,149 @@ body {
     font-family: 'Arvo', serif;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+.nav-bar a:hover {
+    color: var(--accent);
+}
+
+/* --- CINEMATIC OVERLAYS (Intro & Generator Reveal) --- */
+#intro-overlay, #video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000; /* Deep black cinematic background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.intro-content {
+    text-align: center;
+    color: white;
+}
+
+.intro-content h1 {
+    font-family: 'Arvo', serif;
+    font-size: 4rem;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    animation: movieTitlePulse 4s infinite ease-in-out;
+}
+
+/* --- RUSTIC BUTTONS --- */
+.ready-btn, .action-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 15px 40px;
+    font-family: 'Arvo', serif;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.ready-btn:hover, .action-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* --- SCRAPBOOK CONTAINER --- */
 .container { 
-    max-width: 900px; 
+    max-width: 850px; 
     margin: 50px auto; 
     padding: 60px;
     background: var(--paper);
-    box-shadow: 2px 2px 20px rgba(0,0,0,0.05);
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
 }
 
+h1 {
+    font-family: 'Arvo', serif;
+    color: var(--forest);
+    text-align: center;
+}
+
+/* --- SMALL POLAROID IMAGES --- */
 .scrapbook-img {
     background: white;
-    padding: 12px 12px 30px 12px;
+    padding: 12px 12px 35px 12px; /* Bottom-heavy for that polaroid look */
     box-shadow: 5px 10px 25px rgba(0,0,0,0.15);
     border: 1px solid #ddd;
-    max-width: 100%;
+    max-width: 300px; /* Kept small to avoid overwhelming the screen */
     margin: 30px auto;
     display: block;
+    transition: transform 0.3s ease;
 }
 
 .tilt-right { transform: rotate(2deg); }
 .tilt-left { transform: rotate(-2deg); }
 
-.record-section { margin: 40px 0; border-top: 1px dashed var(--accent); padding-top: 20px; }
+.scrapbook-img:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* --- SUSPENSE ANIMATIONS (The Generator) --- */
+.suspense-text {
+    font-family: 'Arvo', serif;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    margin: 15px 0;
+    opacity: 0;
+    color: white;
+    animation: fadeInSlide 1s forwards;
+}
+
+.reveal-title {
+    font-family: 'Arvo', serif;
+    font-size: 4.5rem;
+    color: var(--accent);
+    letter-spacing: 8px;
+    margin: 20px 0;
+    opacity: 0;
+    text-shadow: 0 0 20px rgba(168, 107, 76, 0.4);
+    animation: bigReveal 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes movieTitlePulse {
+    0% { transform: scale(1); opacity: 0.8; filter: blur(2px); }
+    50% { transform: scale(1.05); opacity: 1; filter: blur(0px); }
+    100% { transform: scale(1); opacity: 0.8; filter: blur(2px); }
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bigReveal {
+    0% { opacity: 0; transform: scale(0.3); filter: blur(15px); }
+    70% { transform: scale(1.1); filter: blur(0px); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* --- STATS SECTION --- */
+.record-section {
+    margin: 40px 0;
+    border-top: 1px dashed var(--accent);
+    padding-top: 20px;
+}
+
+.record-section h3 {
+    color: var(--wood);
+    font-family: 'Arvo';
+}
+
+/* Hide result display until generated */
+#result-display {
+    text-align: center;
+}
