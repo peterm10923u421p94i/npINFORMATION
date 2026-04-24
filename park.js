@@ -2,7 +2,6 @@ class ParkGenerator {
     constructor() {
         this.usParks = [
             { name: "Acadia", state: "ME", year: "1919" },
-            { name: "American Samoa", state: "AS", year: "1988" },
             { name: "Arches", state: "UT", year: "1971" },
             { name: "Badlands", state: "SD", year: "1978" },
             { name: "Big Bend", state: "TX", year: "1944" },
@@ -68,23 +67,39 @@ class ParkGenerator {
     }
 
     pickRandom() {
+        console.log("Button Clicked!"); // For troubleshooting
         const park = this.usParks[Math.floor(Math.random() * this.usParks.length)];
         const display = document.getElementById('result-display');
         
-        display.innerHTML = `<p class="suspense-text">CONSULTING THE ARCHIVES...</p>`;
+        // Reset the display immediately
+        display.innerHTML = "";
 
+        // First piece of text
         setTimeout(() => {
-            display.innerHTML += `<p class="suspense-text" style="color: #A86B4C;">ESTABLISHED ${park.year}</p>`;
-        }, 1200);
+            let p1 = document.createElement('p');
+            p1.className = "suspense-text";
+            p1.innerHTML = `ESTABLISHED: ${park.year}`;
+            display.appendChild(p1);
+        }, 500);
 
+        // Second piece of text
         setTimeout(() => {
-            display.innerHTML += `<p class="suspense-text">LOCATED IN ${park.state}</p>`;
-        }, 2200);
+            let p2 = document.createElement('p');
+            p2.className = "suspense-text";
+            p2.style.color = "#A86B4C";
+            p2.innerHTML = `LOCATION: ${park.state}`;
+            display.appendChild(p2);
+        }, 1500);
 
+        // The Grand Reveal
         setTimeout(() => {
-            display.innerHTML += `<h2 class="reveal-title">${park.name.toUpperCase()}</h2>`;
-        }, 3500);
+            let h2 = document.createElement('h2');
+            h2.className = "reveal-title";
+            h2.innerHTML = park.name.toUpperCase();
+            display.appendChild(h2);
+        }, 2500);
     }
 }
 
-const MyParkRanger = new ParkGenerator();
+// Make the generator available globally
+window.MyParkRanger = new ParkGenerator();
