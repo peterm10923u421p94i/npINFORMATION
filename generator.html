@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NP Explorer | Generator</title>
+    <title>NP Explorer | Discovery</title>
     <link rel="stylesheet" href="park.css">
 </head>
 <body>
     <nav class="nav-bar">
         <a href="index.html">History</a>
-        <a href="stats.html">Statistics</a>
-        <a href="generator.html">Generator</a>
+        <a href="stats.html">Records</a>
+        <a href="generator.html">Discovery</a>
     </nav>
 
     <div class="container" style="text-align: center;">
-        <h1>Adventure Compass</h1>
-        <p class="handwritten">Consult the logs to find your next destination...</p>
+        <h1>The Discovery Compass</h1>
         
-        <div class="photo-spot" style="width: 100px; height: 100px; margin: 20px auto; border-radius: 50%;"></div>
+        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img tilt-right" style="max-width: 400px; margin: 40px auto;">
 
-        <button onclick="MyParkRanger.pickRandom()" style="background: var(--forest); color: white; padding: 15px 30px; border: none; font-family: 'Arvo'; cursor: pointer;">
-            SPIN THE DIAL
-        </button>
+        <div style="margin: 50px 0;">
+            <button class="park-button" onclick="MyParkRanger.pickRandom()">CONSULT THE WILD</button>
+        </div>
 
-        <div id="result-display" style="margin-top: 40px; min-height: 100px;">
-            </div>
+        <div id="result-display" style="min-height: 120px; font-size: 1.4rem;">
+            <em>Ready for departure...</em>
+        </div>
     </div>
 
     <script src="park.js"></script>
