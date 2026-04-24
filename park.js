@@ -1,73 +1,123 @@
 class ParkGenerator {
     constructor() {
         this.usParks = [
-            { name: "Acadia", state: "ME", year: "1919", known: "its rugged rocky coastline and granite peaks." },
-            { name: "American Samoa", state: "AS", year: "1988", known: "its tropical reefs, rainforests, and Samoan culture." },
-            { name: "Arches", state: "UT", year: "1971", known: "more than 2,000 natural sandstone arches." },
-            { name: "Badlands", state: "SD", year: "1978", known: "its sharply eroded buttes and rich fossil beds." },
-            { name: "Big Bend", state: "TX", year: "1944", known: "the dramatic Chisos Mountains and Rio Grande canyons." },
-            { name: "Biscayne", state: "FL", year: "1980", known: "its turquoise waters, emerald islands, and coral reefs." },
-            { name: "Black Canyon of the Gunnison", state: "CO", year: "1999", known: "some of the steepest cliffs and oldest rock in North America." },
-            { name: "Bryce Canyon", state: "UT", year: "1928", known: "the largest collection of hoodoos (rock spire towers) in the world." },
-            { name: "Canyonlands", state: "UT", year: "1964", known: "its colorful canyons and mesas carved by the Colorado River." },
-            { name: "Capitol Reef", state: "UT", year: "1971", known: "the Waterpocket Fold, a 100-mile long wrinkle in the earth." },
-            { name: "Carlsbad Caverns", state: "NM", year: "1930", known: "having over 119 limestone caves, including the massive Big Room." },
-            { name: "Channel Islands", state: "CA", year: "1980", known: "unique island species and pristine coastal waters." },
-            { name: "Congaree", state: "SC", year: "2003", known: "the largest intact expanse of old-growth bottomland hardwood forest." },
-            { name: "Crater Lake", state: "OR", year: "1902", known: "being the deepest lake in the U.S., famous for its deep blue color." },
-            { name: "Cuyahoga Valley", state: "OH", year: "2000", known: "the winding Cuyahoga River and the historic Ohio & Erie Canal." },
-            { name: "Death Valley", state: "CA/NV", year: "1994", known: "being the hottest, driest, and lowest place in North America." },
-            { name: "Denali", state: "AK", year: "1917", known: "North America’s tallest peak, Denali, and vast arctic tundra." },
-            { name: "Dry Tortugas", state: "FL", year: "1992", known: "Fort Jefferson and crystal clear waters full of marine life." },
-            { name: "Everglades", state: "FL", year: "1947", known: "the largest subtropical wilderness in the United States." },
-            { name: "Gates of the Arctic", state: "AK", year: "1980", known: "being a vast, roadless wilderness in the northernmost reaches." },
-            { name: "Gateway Arch", state: "MO", year: "2018", known: "the 630-foot tall stainless steel arch honoring Westward expansion." },
-            { name: "Glacier", state: "MT", year: "1910", known: "its glacier-carved peaks and the famous Going-to-the-Sun Road." },
-            { name: "Glacier Bay", state: "AK", year: "1980", known: "massive tidewater glaciers and incredible whale watching." },
-            { name: "Grand Canyon", state: "AZ", year: "1919", known: "its immense size and deep, colorful canyon walls." },
-            { name: "Grand Teton", state: "WY", year: "1929", known: "the jagged Teton Range and the scenic Snake River." },
-            { name: "Great Basin", state: "NV", year: "1986", known: "its ancient bristlecone pines and the marble Lehman Caves." },
-            { name: "Great Sand Dunes", state: "CO", year: "2004", known: "the tallest sand dunes in North America." },
-            { name: "Great Smoky Mountains", state: "TN/NC", year: "1934", known: "its misty blue ridges and incredible biological diversity." },
-            { name: "Guadalupe Mountains", state: "TX", year: "1966", known: "the highest peak in Texas and the world's premier fossil reef." },
-            { name: "Haleakalā", state: "HI", year: "1916", known: "the massive Haleakalā shield volcano and rare silversword plants." },
-            { name: "Hawaiʻi Volcanoes", state: "HI", year: "1916", known: "the world's most active volcanoes, Kilauea and Mauna Loa." },
-            { name: "Hot Springs", state: "AR", year: "1921", known: "its ancient thermal springs and historic Bathhouse Row." },
-            { name: "Indiana Dunes", state: "IN", year: "2019", known: "its diverse ecosystem of dunes, wetlands, and prairies." },
-            { name: "Isle Royale", state: "MI", year: "1940", known: "being a remote island wilderness with wolves and moose." },
-            { name: "Joshua Tree", state: "CA", year: "1994", known: "the unique twisted Joshua trees and giant boulder formations." },
-            { name: "Katmai", state: "AK", year: "1980", known: "its high density of brown bears and the Valley of Ten Thousand Smokes." },
-            { name: "Kenai Fjords", state: "AK", year: "1980", known: "where the mountains meet the sea and glaciers spill into the water." },
-            { name: "Kings Canyon", state: "CA", year: "1940", known: "its giant sequoia trees and deep, rugged glacier-carved canyon." },
-            { name: "Kobuk Valley", state: "AK", year: "1980", known: "the Great Kobuk Sand Dunes and the caribou migration path." },
-            { name: "Lake Clark", state: "AK", year: "1980", known: "stunning alpine scenery, active volcanoes, and brown bears." },
-            { name: "Lassen Volcanic", state: "CA", year: "1916", known: "bubbling mud pots, steaming vents, and all four types of volcanoes." },
-            { name: "Mammoth Cave", state: "KY", year: "1941", known: "being the longest known cave system in the world." },
-            { name: "Mesa Verde", state: "CO", year: "1906", known: "thousands of ancestral Puebloan archaeological sites and cliff dwellings." },
-            { name: "Mount Rainier", state: "WA", year: "1899", known: "its massive glacier-clad peak and subalpine flower meadows." },
-            { name: "New River Gorge", state: "WV", year: "2020", known: "one of the oldest rivers on the continent and world-class rafting." },
-            { name: "North Cascades", state: "WA", year: "1968", known: "having over 300 glaciers and spectacular jagged mountain peaks." },
-            { name: "Olympic", state: "WA", year: "1938", known: "its temperate rainforests and dramatic Pacific coastline." },
-            { name: "Petrified Forest", state: "AZ", year: "1962", known: "one of the world's largest concentrations of petrified wood." },
-            { name: "Pinnacles", state: "CA", year: "2013", known: "massive monoliths and crags that are the remains of an ancient volcano." },
-            { name: "Redwood", state: "CA", year: "1968", known: "being home to the tallest trees on Earth." },
-            { name: "Rocky Mountain", state: "CO", year: "1915", known: "the high-elevation Trail Ridge Road and spectacular alpine lakes." },
-            { name: "Saguaro", state: "AZ", year: "1994", known: "the giant saguaro cactus, a symbol of the American West." },
-            { name: "Sequoia", state: "CA", year: "1890", known: "the General Sherman tree, the largest tree by volume in the world." },
-            { name: "Shenandoah", state: "VA", year: "1935", known: "the scenic Skyline Drive and the beauty of the Blue Ridge Mountains." },
-            { name: "Theodore Roosevelt", state: "ND", year: "1978", known: "the colorful badlands where the Great Plains meet the Little Missouri River." },
-            { name: "Virgin Islands", state: "VI", year: "1956", known: "its white sand beaches and incredible snorkeling trails." },
-            { name: "Voyageurs", state: "MN", year: "1975", known: "its interconnected water routes and the beauty of the North Woods." },
-            { name: "White Sands", state: "NM", year: "2019", known: "the world's largest gypsum dunefield." },
-            { name: "Wind Cave", state: "SD", year: "1903", known: "being one of the world’s longest caves, famous for its boxwork formations." },
-            { name: "Wrangell-St. Elias", state: "AK", year: "1980", known: "being the largest U.S. National Park, covering over 13 million acres." },
-            { name: "Yellowstone", state: "WY/MT/ID", year: "1872", known: "being the world's first national park and its geothermal geysers." },
-            { name: "Yosemite", state: "CA", year: "1890", known: "Half Dome, El Capitan, and its spectacular granite cliffs." },
-            { name: "Zion", state: "UT", year: "1919", known: "the massive sandstone cliffs of Zion Canyon and the Narrows." }
+            { name: "Acadia", state: "ME", year: "1919", known: "rugged rocky coastlines." },
+            { name: "Arches", state: "UT", year: "1971", known: "natural sandstone arches." },
+            { name: "Badlands", state: "SD", year: "1978", known: "eroded buttes and fossil beds." },
+            { name: "Big Bend", state: "TX", year: "1944", known: "sea-level deserts and mountain peaks." },
+            { name: "Biscayne", state: "FL", year: "1980", known: "emerald islands and coral reefs." },
+            { name: "Black Canyon", state: "CO", year: "1999", known: "steep cliffs and ancient rock." },
+            { name: "Bryce Canyon", state: "UT", year: "1928", known: "massive hoodoo formations." },
+            { name: "Canyonlands", state: "UT", year: "1964", known: "canyons carved by the Colorado River." },
+            { name: "Capitol Reef", state: "UT", year: "1971", known: "the Waterpocket Fold wrinkle." },
+            { name: "Carlsbad Caverns", state: "NM", year: "1930", known: "underground limestone caves." },
+            { name: "Channel Islands", state: "CA", year: "1980", known: "isolated island ecosystems." },
+            { name: "Congaree", state: "SC", year: "2003", known: "old-growth bottomland forests." },
+            { name: "Crater Lake", state: "OR", year: "1902", known: "its deep blue volcanic lake." },
+            { name: "Cuyahoga Valley", state: "OH", year: "2000", known: "native forests and canal history." },
+            { name: "Death Valley", state: "CA/NV", year: "1994", known: "extreme heat and low basins." },
+            { name: "Denali", state: "AK", year: "1917", known: "North America’s tallest peak." },
+            { name: "Dry Tortugas", state: "FL", year: "1992", known: "coral reefs and Fort Jefferson." },
+            { name: "Everglades", state: "FL", year: "1947", known: "subtropical wetlands and gators." },
+            { name: "Gates of the Arctic", state: "AK", year: "1980", known: "vast, roadless wilderness." },
+            { name: "Gateway Arch", state: "MO", year: "2018", known: "the gateway to the West." },
+            { name: "Glacier", state: "MT", year: "1910", known: "glacier-carved mountains." },
+            { name: "Glacier Bay", state: "AK", year: "1980", known: "massive tidewater glaciers." },
+            { name: "Grand Canyon", state: "AZ", year: "1919", known: "its overwhelming immense scale." },
+            { name: "Grand Teton", state: "WY", year: "1929", known: "jagged peaks and alpine lakes." },
+            { name: "Great Basin", state: "NV", year: "1986", known: "ancient bristlecone pines." },
+            { name: "Great Sand Dunes", state: "CO", year: "2004", known: "tallest dunes in North America." },
+            { name: "Great Smoky Mtns", state: "TN/NC", year: "1934", known: "misty forests and biodiversity." },
+            { name: "Guadalupe Mtns", state: "TX", year: "1966", known: "ancient fossilized coral reefs." },
+            { name: "Haleakalā", state: "HI", year: "1916", known: "dormant volcanic landscapes." },
+            { name: "Hawaiʻi Volcanoes", state: "HI", year: "1916", known: "active lava flows and vents." },
+            { name: "Hot Springs", state: "AR", year: "1921", known: "natural thermal spring water." },
+            { name: "Indiana Dunes", state: "IN", year: "2019", known: "Lake Michigan’s sandy shore." },
+            { name: "Isle Royale", state: "MI", year: "1940", known: "remote island wolf populations." },
+            { name: "Joshua Tree", state: "CA", year: "1994", known: "twisted trees and desert rocks." },
+            { name: "Katmai", state: "AK", year: "1980", known: "brown bears and volcanic ash." },
+            { name: "Kenai Fjords", state: "AK", year: "1980", known: "ice fields and marine wildlife." },
+            { name: "Kings Canyon", state: "CA", year: "1940", known: "deep canyons and giant trees." },
+            { name: "Kobuk Valley", state: "AK", year: "1980", known: "arctic sand dunes and caribou." },
+            { name: "Lake Clark", state: "AK", year: "1980", known: "turquoise lakes and volcanoes." },
+            { name: "Lassen Volcanic", state: "CA", year: "1916", known: "hydrothermal mud pots." },
+            { name: "Mammoth Cave", state: "KY", year: "1941", known: "the world's longest cave system." },
+            { name: "Mesa Verde", state: "CO", year: "1906", known: "ancient Ancestral Puebloan homes." },
+            { name: "Mount Rainier", state: "WA", year: "1899", known: "its massive glacial peak." },
+            { name: "New River Gorge", state: "WV", year: "2020", known: "rugged canyon white water." },
+            { name: "North Cascades", state: "WA", year: "1968", known: "jagged peaks and 300+ glaciers." },
+            { name: "Olympic", state: "WA", year: "1938", known: "diverse temperate rainforests." },
+            { name: "Petrified Forest", state: "AZ", year: "1962", known: "ancient fossilized wood logs." },
+            { name: "Pinnacles", state: "CA", year: "2013", known: "towering rock spires and caves." },
+            { name: "Redwood", state: "CA", year: "1968", known: "the world's tallest trees." },
+            { name: "Rocky Mountain", state: "CO", year: "1915", known: "high-altitude tundra and peaks." },
+            { name: "Saguaro", state: "AZ", year: "1994", known: "giant desert saguaro cacti." },
+            { name: "Sequoia", state: "CA", year: "1890", known: "massive giant forest trees." },
+            { name: "Shenandoah", state: "VA", year: "1935", known: "the scenic Blue Ridge Mountains." },
+            { name: "Theodore Roosevelt", state: "ND", year: "1978", known: "badlands and bison herds." },
+            { name: "Virgin Islands", state: "VI", year: "1956", known: "white beaches and coral reefs." },
+            { name: "Voyageurs", state: "MN", year: "1975", known: "waterways and island forests." },
+            { name: "White Sands", state: "NM", year: "2019", known: "glistering gypsum sand dunes." },
+            { name: "Wind Cave", state: "SD", year: "1903", known: "rare boxwork cave formations." },
+            { name: "Wrangell–St. Elias", state: "AK", year: "1980", known: "massive volcanic ice fields." },
+            { name: "Yellowstone", state: "WY/MT/ID", year: "1872", known: "geysers and boiling springs." },
+            { name: "Yosemite", state: "CA", year: "1890", known: "granite cliffs and waterfalls." },
+            { name: "Zion", state: "UT", year: "1919", known: "deep red sandstone canyons." }
         ];
     }
 
     pickRandom() {
-        // ... (use the same pickRandom code from the last step)
+        const park = this.usParks[Math.floor(Math.random() * this.usParks.length)];
+        const display = document.getElementById('result-display');
+        const overlay = document.getElementById('video-overlay');
+        
+        // Take over screen
+        overlay.style.display = 'flex';
+        display.innerHTML = "";
+
+        // Sequence 1: Year
+        setTimeout(() => {
+            const yearEl = document.createElement('p');
+            yearEl.className = "suspense-text";
+            yearEl.innerText = `ESTABLISHED ${park.year}`;
+            display.appendChild(yearEl);
+        }, 500);
+
+        // Sequence 2: State
+        setTimeout(() => {
+            const stateEl = document.createElement('p');
+            stateEl.className = "suspense-text";
+            stateEl.style.color = "#A86B4C";
+            stateEl.innerText = `LOCATED IN ${park.state}`;
+            display.appendChild(stateEl);
+        }, 1500);
+
+        // Sequence 3: THE REVEAL
+        setTimeout(() => {
+            const nameEl = document.createElement('h2');
+            nameEl.className = "reveal-title";
+            nameEl.innerText = `${park.name.toUpperCase()}`;
+            display.appendChild(nameEl);
+        }, 2800);
+
+        // Sequence 4: Known For (The closing detail)
+        setTimeout(() => {
+            const factEl = document.createElement('p');
+            factEl.className = "suspense-text";
+            factEl.style.fontSize = "1rem";
+            factEl.style.color = "white";
+            factEl.innerText = `Known for ${park.known}`;
+            display.appendChild(factEl);
+            
+            // Show exit button
+            const btn = document.createElement('button');
+            btn.className = "action-btn";
+            btn.style.marginTop = "30px";
+            btn.innerText = "Return to Compass";
+            btn.onclick = () => overlay.style.display = 'none';
+            display.appendChild(btn);
+        }, 4000);
     }
 }
+
+const MyParkRanger = new ParkGenerator();
