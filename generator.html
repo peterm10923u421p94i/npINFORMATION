@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National Parks | Generator</title>
+    <link rel="stylesheet" href="park.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="index.html">History</a>
+        <a href="stats.html">Park Stats</a>
+        <a href="generator.html" class="active-link">Generator</a>
+    </nav>
+
+    <div class="container" style="text-align: center;">
+        <h1>Adventure Generator</h1>
+        <div class="gen-box">
+            <p>Let the rustic compass guide you to a US National Park.</p>
+            <button class="park-button" onclick="MyParkRanger.pickRandom()">SPIN THE COMPASS</button>
+            <div id="result-display">Ready for departure...</div>
+        </div>
+    </div>
+
+    <script src="park.js"></script>
+</body>
+</html>
