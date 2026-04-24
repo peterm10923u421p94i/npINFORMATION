@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <link rel="stylesheet" href="park.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lora&display=swap" rel="stylesheet">
 </head>
-<body class="discovery-body">
-
-    <nav class="nav-bar">
+<body style="background:#1a1a1a;"> <nav class="nav-bar">
         <a href="index.html">History</a>
         <a href="stats.html">Records</a>
         <a href="generator.html">Discovery</a>
     </nav>
 
-    <div id="gen-overlay" class="overlay" style="display:none;">
-        <div class="permit-box">
-            <h2 id="gen-title">Scanning...</h2>
-            <div id="gen-details"></div>
-        </div>
+    <div id="video-overlay" style="display:none;">
+        <div id="result-display" style="text-align: center;"></div>
     </div>
 
-    <div style="text-align: center; padding-top: 100px;">
-        <h1 style="font-family:'Arvo'; letter-spacing: 5px;">DISCOVERY COMPASS</h1>
-        <p style="font-style:italic;">Consult the wild archives to find your next journey.</p>
+    <div class="container" style="text-align: center;">
+        <h1 style="font-family:'Arvo';">The Discovery Compass</h1>
+        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img" style="transform:rotate(2deg);">
         
-        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img">
+        <p style="font-style:italic; margin-bottom: 30px;">Consult the archives to begin...</p>
         
-        <br>
-        <button class="action-btn" onclick="window.MyParkRanger.pickRandom()">Consult the Wild</button>
+        <button class="action-btn" onclick="MyParkRanger.pickRandom()">CONSULT THE WILD</button>
     </div>
 
     <script src="park.js"></script>
