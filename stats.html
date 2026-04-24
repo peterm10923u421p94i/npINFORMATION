@@ -2,47 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NP Explorer | Records</title>
+    <title>NP Explorer | Stats</title>
     <link rel="stylesheet" href="park.css">
 </head>
 <body>
     <nav class="nav-bar">
         <a href="index.html">History</a>
-        <a href="stats.html">Stats</a>
+        <a href="stats.html">Statistics</a>
         <a href="generator.html">Generator</a>
     </nav>
 
     <div class="container">
-        <h1>Park Records & Archives</h1>
-        
-        <div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 50px;">
-            <div style="flex: 1;">
-                <h3>The Most Walked Trails</h3>
-                <ol>
-                    <li>Great Smoky Mountains (13.3M)</li>
-                    <li>Grand Canyon (4.7M)</li>
-                    <li>Zion (4.6M)</li>
-                </ol>
-            </div>
-            <div class="photo-frame" style="width: 250px; transform: rotate(5deg);">
-                <img src="https://images.unsplash.com/photo-1500674425917-09f449265691?w=300" alt="Smoky Mountains">
-                <p class="handwritten">The Mist of the Smokies</p>
-            </div>
+        <h1>Park Archives & Records</h1>
+
+        <div class="record-block">
+            <h3>I. Most Visited Parks (Annual)</h3>
+            <ol>
+                <li>Great Smoky Mountains (13.3M)</li>
+                <li>Grand Canyon (4.7M)</li>
+                <li>Zion (4.6M)</li>
+                <li>Yellowstone (4.5M)</li>
+            </ol>
+            <div class="photo-spot" style="height: 150px; width: 200px; transform: rotate(2deg);"></div>
         </div>
 
-        <div style="display: flex; gap: 40px; align-items: flex-start;">
-            <div class="photo-frame" style="width: 250px; transform: rotate(-3deg);">
-                <img src="https://images.unsplash.com/photo-1500674425917-09f449265691?w=300" alt="Alaskan Wilderness">
-                <p class="handwritten">Untouched Alaska</p>
-            </div>
-            <div style="flex: 1;">
-                <h3>The Giants (Largest Acres)</h3>
-                <ul>
-                    <li>Wrangell-St. Elias (13.2M)</li>
-                    <li>Gates of the Arctic (8.4M)</li>
-                    <li>Denali (6.1M)</li>
-                </ul>
-            </div>
+        <div class="record-block">
+            <h3>II. Least Visited Parks</h3>
+            <ul>
+                <li>National Park of American Samoa</li>
+                <li>Gates of the Arctic, AK</li>
+                <li>Kobuk Valley, AK</li>
+                <li>Isle Royale, MI</li>
+            </ul>
+            <div class="photo-spot" style="height: 150px; width: 200px; transform: rotate(-3deg);"></div>
+        </div>
+
+        <div class="record-block">
+            <h3>III. Largest Parks (By Acreage)</h3>
+            <ul>
+                <li>Wrangell-St. Elias (13.2M Acres)</li>
+                <li>Gates of the Arctic (8.4M Acres)</li>
+                <li>Denali (6.1M Acres)</li>
+                <li>Katmai (4.1M Acres)</li>
+            </ul>
+        </div>
+
+        <div class="record-block">
+            <h3>IV. The Oldest Parks (Establishment)</h3>
+            <ol>
+                <li>Yellowstone (1872)</li>
+                <li>Sequoia (1890)</li>
+                <li>Yosemite (1890)</li>
+                <li>Mount Rainier (1899)</li>
+                <li>Crater Lake (1902)</li>
+            </ol>
         </div>
     </div>
 </body>
