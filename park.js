@@ -69,46 +69,48 @@ class ParkGenerator {
     pickRandom() {
         const park = this.usParks[Math.floor(Math.random() * this.usParks.length)];
         const display = document.getElementById('result-display');
+        const overlay = document.getElementById('video-overlay');
         
+        overlay.style.display = 'flex';
         display.innerHTML = "";
 
-        // Stage 1: The Year
         setTimeout(() => {
             const p1 = document.createElement('p');
             p1.className = "suspense-text";
             p1.innerText = `ESTABLISHED: ${park.year}`;
             display.appendChild(p1);
-        }, 500);
+        }, 600);
 
-        // Stage 2: The State
         setTimeout(() => {
             const p2 = document.createElement('p');
             p2.className = "suspense-text";
             p2.style.color = "#A86B4C";
             p2.innerText = `LOCATION: ${park.state}`;
             display.appendChild(p2);
-        }, 1500);
+        }, 1600);
 
-        // Stage 3: The Big Reveal + Clickable Link
         setTimeout(() => {
             const h2 = document.createElement('h2');
             h2.className = "reveal-title";
             h2.innerText = park.name.toUpperCase();
             display.appendChild(h2);
-
-            // Create the link button
-            const linkBtn = document.createElement('a');
-            linkBtn.href = park.link;
-            linkBtn.target = "_blank"; // Opens in new tab
-            linkBtn.className = "ready-btn"; 
-            linkBtn.style.display = "inline-block";
-            linkBtn.style.marginTop = "20px";
-            linkBtn.style.color = "black";
-            linkBtn.style.borderColor = "black";
-            linkBtn.innerText = "VIEW PARK DETAILS →";
-            display.appendChild(linkBtn);
-
         }, 2800);
+
+        setTimeout(() => {
+            const infoEl = document.createElement('p');
+            infoEl.className = "suspense-text";
+            infoEl.style.fontSize = "1rem";
+            infoEl.innerHTML = `You can find more information about this park: <br>
+                                <a href="${park.link}" target="_blank" style="color:white; text-decoration:underline;">${park.name} Official Page</a>`;
+            display.appendChild(infoEl);
+
+            const closeBtn = document.createElement('button');
+            closeBtn.className = "ready-btn";
+            closeBtn.style.marginTop = "30px";
+            closeBtn.innerText = "Return to Compass";
+            closeBtn.onclick = () => { overlay.style.display = 'none'; };
+            display.appendChild(closeBtn);
+        }, 3800);
     }
 }
 
