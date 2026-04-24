@@ -1,43 +1,95 @@
 :root {
     --forest: #2D4033;
     --wood: #5C3A2E;
-    --parchment: #F4EFE6;
-    --dirt: #8B5E3C;
-    --trail-sign: #E9D758;
+    --cream: #F4EFE6;
+    --paper: #FAF9F6;
+    --ink: #332F2C;
+    --accent: #A86B4C;
 }
 
 body {
-    background-color: var(--parchment);
-    color: var(--wood);
+    background-color: var(--cream);
+    /* Subtle paper texture effect */
+    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+    color: var(--ink);
     font-family: 'Lora', serif;
     margin: 0;
-    line-height: 1.6;
 }
 
+/* NAVIGATION - Artistic Ribbon */
 .nav-bar {
-    background-color: var(--forest);
+    background-color: var(--wood);
     display: flex;
     justify-content: center;
-    padding: 1.2rem;
-    border-bottom: 5px solid var(--wood);
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-bottom: 3px solid var(--forest);
 }
 
 .nav-bar a {
-    color: white;
+    color: var(--paper);
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 25px;
+    font-family: 'Arvo', serif;
     font-weight: bold;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    transition: 0.3s;
 }
 
-.active-link { color: var(--trail-sign); border-bottom: 2px solid var(--trail-sign); }
+.nav-bar a:hover { color: var(--accent); transform: scale(1.1); }
 
-.container { max-width: 800px; margin: 40px auto; padding: 20px; }
+/* THE SCRAPBOOK CONTAINER */
+.container { 
+    max-width: 1000px; 
+    margin: 50px auto; 
+    padding: 40px;
+    background: var(--paper);
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    position: relative;
+}
 
-.park-img { width: 100%; border: 10px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+/* POLAROID STYLE PHOTOS */
+.photo-frame {
+    background: white;
+    padding: 15px 15px 45px 15px;
+    box-shadow: 3px 5px 15px rgba(0,0,0,0.2);
+    display: inline-block;
+    transition: 0.3s;
+    border: 1px solid #ddd;
+}
 
-.stats-card { background: white; border: 2px solid var(--wood); padding: 20px; margin-bottom: 20px; }
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: sepia(20%); /* Adds a vintage look */
+}
 
-.gen-box { border: 3px dashed var(--wood); padding: 40px; background: white; }
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.05) !important;
+    z-index: 10;
+}
 
-.park-button { background: var(--forest); color: white; border: none; padding: 15px 30px; cursor: pointer; }
+/* PHOTO GALLERY GRID */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* DECORATIVE ACCENTS */
+h1 { 
+    font-family: 'Arvo', serif; 
+    text-align: center;
+    border-bottom: 2px dashed var(--accent);
+    padding-bottom: 10px;
+}
+
+.handwritten {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: var(--accent);
+}
