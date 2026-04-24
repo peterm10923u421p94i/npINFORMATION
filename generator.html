@@ -4,23 +4,22 @@
     <link rel="stylesheet" href="park.css">
     <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lora&display=swap" rel="stylesheet">
 </head>
-<body style="background:#1a1a1a;"> <nav class="nav-bar">
+<body style="background-color: #1a1a1a;"> <nav class="nav-bar">
         <a href="index.html">History</a>
         <a href="stats.html">Records</a>
         <a href="generator.html">Discovery</a>
     </nav>
 
-    <div id="video-overlay" style="display:none;">
-        <div id="result-display" style="text-align: center;"></div>
+    <div id="gen-overlay" class="overlay" style="display:none;">
+        <div class="permit-box" id="gen-content">
+            </div>
     </div>
 
-    <div class="container" style="text-align: center;">
+    <div class="container" style="text-align: center; margin-top: 100px;">
         <h1 style="font-family:'Arvo';">The Discovery Compass</h1>
-        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img" style="transform:rotate(2deg);">
-        
-        <p style="font-style:italic; margin-bottom: 30px;">Consult the archives to begin...</p>
-        
-        <button class="action-btn" onclick="MyParkRanger.pickRandom()">CONSULT THE WILD</button>
+        <img src="ben-stiefel-PtCmDqF8nXc-unsplash.jpg" class="scrapbook-img">
+        <p style="margin-bottom: 30px;">Identify your next journey within the 63 protected lands.</p>
+        <button class="action-btn" onclick="MyParkRanger.pickRandom()">Consult the Wild</button>
     </div>
 
     <script src="park.js"></script>
