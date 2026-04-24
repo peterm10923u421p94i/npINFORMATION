@@ -1,28 +1,44 @@
-<div id="intro-overlay" class="overlay">
-    <div class="permit-box">
-        <h2>NATIONAL PARK SERVICE</h2>
-        <p>Official Archive Access: <strong>Authorized</strong></p>
-        <button class="action-btn" onclick="enterSite()">Ready to Get Going</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NP Explorer | History</title>
+    <link rel="stylesheet" href="park.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <h1>The Compass</h1>
+            <p>EST. 2026 | EXPLORE THE WILD</p>
+            <button class="ready-btn" onclick="enterSite()">READY TO GET GOING</button>
+        </div>
     </div>
-</div>
 
-<nav class="nav-bar">
-    <a href="index.html">History</a>
-    <a href="stats.html">Records</a>
-    <a href="generator.html">Discovery</a>
-</nav>
+    <nav class="nav-bar">
+        <a href="index.html">History</a>
+        <a href="stats.html">Records</a>
+        <a href="generator.html">Discovery</a>
+    </nav>
 
-<div class="container">
-    <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img" style="transform: rotate(2deg);">
-    <h1>Historical Foundation</h1>
-    <p>In 1872, the world's first National Park was born. Yellowstone paved the way for a global movement of conservation...</p>
-    <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img" style="transform: rotate(-2deg);">
-</div>
+    <div class="container">
+        <img src="steven-cordes-tAltJgzJBas-unsplash.jpg" class="scrapbook-img tilt-right">
 
-<script>
-    if(sessionStorage.getItem('visited')) document.getElementById('intro-overlay').style.display='none';
-    function enterSite() {
-        sessionStorage.setItem('visited', 'true');
-        document.getElementById('intro-overlay').style.display = 'none';
-    }
-</script>
+        <h1>The Historical Foundation</h1>
+        <p>The American National Park system, often hailed as "America's Best Idea," began as a revolutionary democratic experiment to ensure that the nation's most sublime landscapes remained public property rather than private estates. This vision was formalized in 1872 when President Ulysses S. Grant signed the Yellowstone National Park Protection Act into law, creating the world's first national park. The movement gained its soul through the evocative writings of John Muir, who championed the spiritual and physical necessity of wild places, and its political momentum through Theodore Roosevelt, whose conservationist presidency protected over 230 million acres of public land. By the time the National Park Service was officially established in 1916 under the Organic Act, the mission had become a permanent part of the American identity: to conserve the scenery, the natural and historic objects, and the wild life therein for the enjoyment of future generations in a way that leaves them unimpaired for the future.</p>
+
+        <img src="trevor-hayes-nyLuIsGK87s-unsplash.jpg" class="scrapbook-img tilt-left" style="width: 70%;">
+    </div>
+
+    <script>
+        function enterSite() {
+            const overlay = document.getElementById('intro-overlay');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
