@@ -1,31 +1,113 @@
-/* SUSPENSE ANIMATIONS */
-.suspense-text {
+:root {
+    --forest: #2D4033;
+    --wood: #5C3A2E;
+    --cream: #F4EFE6;
+    --paper: #FAF9F6;
+    --ink: #332F2C;
+    --accent: #A86B4C;
+}
+
+body {
+    background-color: var(--cream);
+    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    margin: 0;
+    line-height: 1.9;
+}
+
+/* --- CINEMATIC INTRO ANIMATION --- */
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000; /* Deep black cinematic background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.intro-content {
+    text-align: center;
+    color: white;
+    animation: fadeInScale 3s ease-out;
+}
+
+.intro-content h1 {
     font-family: 'Arvo', serif;
-    font-size: 1.2rem;
-    letter-spacing: 5px;
-    margin: 10px 0;
-    opacity: 0;
-    animation: fadeInSlide 1s forwards;
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: white;
 }
 
-.reveal-title {
-    font-family: 'Arvo', serif;
-    font-size: 3.5rem; /* Massive letters */
-    color: var(--forest);
-    letter-spacing: 10px;
-    margin-top: 20px;
-    opacity: 0;
-    animation: bigReveal 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
-    text-shadow: 2px 2px 0px var(--wood);
+.intro-content p {
+    font-style: italic;
+    letter-spacing: 3px;
+    opacity: 0.8;
 }
 
-@keyframes fadeInSlide {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes bigReveal {
-    0% { opacity: 0; transform: scale(0.5); filter: blur(10px); }
-    70% { transform: scale(1.1); }
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
     100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
+
+.ready-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 15px 40px;
+    font-family: 'Arvo';
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.3s;
+    letter-spacing: 2px;
+}
+
+.ready-btn:hover { background: white; color: black; }
+
+/* --- SCRAPBOOK LAYOUT --- */
+.nav-bar {
+    background-color: var(--wood);
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    border-bottom: 4px solid var(--forest);
+}
+
+.nav-bar a {
+    color: var(--paper);
+    text-decoration: none;
+    margin: 0 25px;
+    font-family: 'Arvo', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container { 
+    max-width: 900px; 
+    margin: 50px auto; 
+    padding: 60px;
+    background: var(--paper);
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.05);
+}
+
+.scrapbook-img {
+    background: white;
+    padding: 12px 12px 30px 12px;
+    box-shadow: 5px 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
+    max-width: 100%;
+    margin: 30px auto;
+    display: block;
+}
+
+.tilt-right { transform: rotate(2deg); }
+.tilt-left { transform: rotate(-2deg); }
+
+.record-section { margin: 40px 0; border-top: 1px dashed var(--accent); padding-top: 20px; }
